@@ -27,3 +27,15 @@ app.listen(process.env.port,async()=>{
     }
    
 }) 
+
+// https://rose-hilarious-bat.cyclic.app/
+
+// "year": 2016,
+// "make": "audi",
+// "model": "x4",
+// "kms": "20000 km",
+// "transmission": "petrol",
+// "exteriorcolor": "red",
+// "fuel": "petrol",
+// "price": 90080,
+// "image": "https://cdn.bigboytoyz.com/new-version/assets/images/no-image-3.png"
