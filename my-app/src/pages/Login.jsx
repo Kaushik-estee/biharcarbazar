@@ -5,6 +5,9 @@ import React from "react";
 import Footer from "../Ui/Components/Footer";
 import Nav from "../Ui/Nav";
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Login() {
     const navigate = useNavigate();
@@ -18,11 +21,14 @@ const navigateToAbout = () => {
 const handleSubmit = async(e)=>{
   e.preventDefault()
 
-  if (email=== "admin@gmail.com" && password ==="123"){
+  if (email=== "admin@bcb.com" && password ==="123"){
+    
     navigateToAbout()
     // document.getElementById('auth').style.display = 'block'
     console.log(email,password);
-   document.getElementById('logout').style.display = 'block'
+   
+  }else{
+    toast.error('wrong credentials');
   }
 }
 
@@ -33,7 +39,8 @@ const handleSubmit = async(e)=>{
   return (
     <div className="login-page">
         <Nav/>
-      <form onSubmit={handleSubmit} className="form" data-testid="login-form">
+        <div style={{minHeight:'600px',alignItems:'center',display:'flex',justifyContent:'center'}}>
+      <form  onSubmit={handleSubmit} className="form" data-testid="login-form">
         <div>
           <label>
             <input value={email}  onChange={(e)=>setEmail(e.target.value)} data-testid="email-input" type="email" placeholder="email" />
@@ -51,14 +58,14 @@ const handleSubmit = async(e)=>{
           </label>
         </div>
         <div>
-          <button data-testid="form-submit" type="submit">
+          <button  style={{backgroundColor:'blue',color:'white',margin:'20px',width:'80%'}} type="submit">
             SUBMIT
           </button>
         </div>
+        <ToastContainer/>
       </form>
-      <div id="logout">
-        <button style={{display:'none'}}>Log out</button>
       </div>
+      
       <Footer/>
     </div>
   );

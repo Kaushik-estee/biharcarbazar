@@ -3,6 +3,7 @@ import axios from 'axios';
 import {  Link } from 'react-router-dom';
 import Adminnav from '../Ui/Components/Adminnav';
 import Footer from '../Ui/Components/Footer';
+import { useNavigate } from 'react-router-dom';
 function Form() {
   const [formData, setFormData] = useState({});
   const [year, setYear] = useState(null);
@@ -14,7 +15,11 @@ function Form() {
   const [fuel, setFuel] = useState("");
   const [price, setPrice] = useState(null);
   const [image, setImage] = useState("");
-  
+  const navigate = useNavigate();
+
+  const navigateToAdmin = () => {
+    navigate('/admin'); // Replace '/about' with the desired route
+};
   // Your form handling logic will go here
   const handleSubmit = async (event) => {
     let obj={
@@ -35,6 +40,7 @@ function Form() {
       const response = await axios.post('https://car-back-qqz1.onrender.com/cars', obj);
       console.log('Response:', response.data);
       // You can handle the response data as needed
+      navigateToAdmin()
     } catch (error) {
       console.error('Error:', error);
       // Handle errors here
@@ -70,12 +76,7 @@ setYear(value)
   
   return (
     <div>
-        {/* <div style={{display:'flex',justifyContent:'space-around',height:'60px',backgroundColor:'gray'}}>
-        <Link to="/"><button>Admin</button></Link>
-        <h1>ADMIN PANEL</h1>
-            <Link to="/add"><button>Add</button></Link>
         
-        </div> */}
         <Adminnav/>
         <div style={{margin:'auto',width:'40%',height:'600px',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}} >
       <form  onSubmit={handleSubmit}>

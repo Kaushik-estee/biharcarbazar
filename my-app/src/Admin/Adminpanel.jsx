@@ -4,7 +4,8 @@ import {  Grid,
 import {useEffect,useState} from "react"
 import ProductCard from "./AdminCard"
 import Footer from "../Ui/Components/Footer"
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Product=()=>{
 const [data,setData] = useState([])
 const [asortdata,setAsortdata]= useState([])
@@ -36,6 +37,7 @@ const onDelete=(id)=>{
       console.log('Delete successful:', response.data);
      // Notify parent component of successful deletion
      fetchData();
+     toast.success('Deleted successfully');
     })
     .catch(error => {
       // Handle error
@@ -120,7 +122,7 @@ onDelete={onDelete}
 
 </Grid>
 
-
+<ToastContainer/>
 </div>
     )
 }

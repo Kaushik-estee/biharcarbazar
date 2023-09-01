@@ -7,7 +7,9 @@ const Adminnav = () => {
     <Link to="/admin"><button style={{color:'white',fontWeight:'bold'}}>ADMIN</button></Link>
     
         <Link to="/add"><button style={{color:'white',fontWeight:'bold'}}>ADD</button></Link>
-    
+        <Link to="/">
+        <button style={{backgroundColor:'red', color:'white',cursor:'pointer'}}>Log Out</button>
+        </Link>
     </div>
   )
 }
