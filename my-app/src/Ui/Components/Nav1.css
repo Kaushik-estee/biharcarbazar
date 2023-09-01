@@ -1,0 +1,177 @@
+/* Small screens */
+@media (max-width: 600px) {
+    #div1{
+        background-color: gray;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    #logo2 img{
+        width: 100px;
+        height: 100px;
+        margin: auto;
+    }
+    #ham{
+        color: white;
+    }
+    #div2{
+        display: none;
+       background-color: gray;
+       height: 300px;
+       width: 100%;
+    }
+    /* #div1 p {
+      display: block;
+    } */
+    #logo{
+        width: 15%;
+        border: 2px solid black;
+
+    }
+    
+    #call{
+        width: 35%;
+       
+    }
+    #call h1{
+        color: white;
+        font-size: 20px;
+    }
+    #info{
+        width: 25%;
+        border: 2px solid black;
+    }
+    #logo img{
+        height: 100%;
+        width: 100%;
+        border: 2px solid black;
+    }
+    #info2 p{
+        color: white;
+        cursor: pointer;
+        margin: 3px;
+        
+    }
+    #info2{
+        margin-top: 40px;
+       
+        text-align: center;
+        
+    }
+    #close{
+        color: white;
+    }
+
+}
+  /* Medium screens */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    #close{
+        color: white;
+    }
+    #logo2 img{
+        width: 100px;
+        height: 100px;
+        margin: auto;
+    }
+    #info2{
+       
+        margin-top: 40px;
+       
+        text-align: center;
+    }
+    #info2 p{
+        color: white;
+        cursor: pointer;
+        margin: 3px;
+    }
+    #div1{
+        background-color: gray;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    #div2{
+       display: none;
+       background-color: gray;
+       height: 300px;
+       width: 100%;
+    }
+    /* #div1 p {
+      display: block;
+    } */
+    #logo{
+        width: 15%;
+        border: 2px solid black;
+
+    }
+    #call{
+        width: 35%;
+       
+    }
+    #call h1{
+        color: white;
+        font-size: 30px;
+    }
+    #info{
+        width: 25%;
+        border: 2px solid black;
+    }
+    #logo img{
+        height: 100%;
+        width: 100%;
+        border: 2px solid black;
+    }
+    #ham{
+        color: white;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 1025px) {
+    #div1{
+        background-color: gray;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        
+        justify-content: space-around;
+       
+    }
+    #div2{
+       display: none;
+       background-color: gray;
+       height: 100px;
+       width: 100%;
+    }
+    /* #div1 p {
+      display: none;
+    } */
+    #logo{
+        width: 15%;
+        border: 2px solid black;
+
+    }
+    #call{
+        width: 25%;
+      
+    }
+    #info{
+        width: 25%;
+       
+    }
+    #logo img{
+        height: 100%;
+        width: 100%;
+        border: 2px solid black;
+    }
+    #ham{
+        display: none;
+    }
+    #num{
+        color: white;
+        font-size: 30px;
+    }
+
+  }
