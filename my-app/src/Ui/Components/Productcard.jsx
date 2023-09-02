@@ -63,34 +63,63 @@ import { color } from 'framer-motion';
               src={image}
             />
           </Box>
-          <div style={{background:"black",borderRadius:'8px'}} >
+          <div style={{background:"gray",borderRadius:'8px'}} >
           <Stack pt={10} align={'center'}>
-            <Text noOfLines={3} textDecoration={'none'} color={'white'} fontSize={'sm'} textTransform={'uppercase'}>
-              Year: {year}
-            </Text>
-       
-            <Stack direction={'column'} align={'center'}>
+           
+            
+          <Heading   color={'black'}  > 
+              {make}
+              </Heading>
               <Text textDecoration={'none'}  color={'white'} fontWeight={800} fontSize={'xl'}>
               &#8377; {price}
               </Text>
-              <Text color={'gray'}  > 
-              Kms: {kms}
-              </Text>
-              <Text color={'gray'}  > 
-              Transmission: {transmission}
-              </Text>
-              <Text color={'gray'}  > 
-              Color: {exteriorcolor}
-              </Text>
-              <Text color={'gray'}  > 
-              Model: {model}
-              </Text>
-              <Text color={'gray'}  > 
-              Fuel: {fuel}
-              </Text>
+            
+            <Stack direction={'column'} align={'center'} margin={'5px'}>
+              <div style={{display:'flex',justifyContent:'space-between'}}>
+              <div style={{width:'59%'}}>
+            <div style={{display:'flex'}}>
+             <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" />
+            <Text margin={'4px'}  textDecoration={'none'} color={'black'} fontSize={'sm'} >
+              {year}
+            </Text>
+            </div>
               
+              <div style={{display:'flex',marginTop:'5px'}}>
+              <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" />
+              <Text  color={'black'}  > 
+              {kms}
+              </Text>
+              </div>
+              <div style={{display:'flex',marginTop:'5px'}}>
+              <img style={{margin:'5px',width:'18px',height:'18px'}} 
+              src="https://cdn.bigboytoyz.com/new-version/attributes/setting-icon.png" alt="" /> 
+              <Text color={'black'}  > 
+                {transmission}
+              </Text>
+              </div>
+              </div>
+              <div style={{width:'40%'}}>
+              <div style={{display:'flex'}}>
+              <img style={{margin:'5px',width:'20px',height:'20px'}}  src="https://cdn.bigboytoyz.com/new-version/attributes/exterior-color.png" alt="" />
+              <Text  margin={'5px'}  color={'black'}  > 
+              {exteriorcolor}
+              </Text>
+              </div>
+              <div style={{display:'flex'}}>
+              <img style={{margin:'5px',width:'23px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/cartype-icon.png" alt="" />
+              <Text margin={'5px'} color={'black'}  > 
+               {model}
+              </Text>
+              </div>
+              <div style={{display:'flex'}}>
+              <img style={{margin:'5px',width:'20px',height:'20px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/fueltype-icon.png" alt="" />
+              <Text  color={'black'}  > 
+               {fuel}
+              </Text>
+              </div>
+              </div>
               
-             
+              </div>
             </Stack>
              
              

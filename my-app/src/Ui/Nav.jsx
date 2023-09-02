@@ -1,4 +1,4 @@
-import { Box,Image,Text,Heading } from '@chakra-ui/react'
+
 import React from 'react'
 import './Components/Nav1.css'; // Import your CSS styles
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -15,17 +15,17 @@ function div2click(){
 
 const Nav = () => {
   return (
- <div>
+ <div style={{display:'flex',justifyContent:'space-around'}} >
   <div  id='div1' >
-    <div id='logo'>
+    <div id='logo' style={{width:'30%'}}>
     <RouterLink to={`/`}>
-      <img src="https://i.ibb.co/FgqSh66/logo.png" alt="bcb" />
+      <img style={{width: '100px',height:'100px'}} src="https://i.ibb.co/FgqSh66/logo.png" alt="bcb" />
       </RouterLink>
     </div>
-    <div id='call'>
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'30%'}} id='call'>
       <h1 id='num'>SELL/BUY : 9297777103</h1>
     </div>
-    <div id='info'>
+    <div id='info' style={{width:'30%'}}>
     <RouterLink to={`/about`}>
       <p>About Us</p>
       </RouterLink>
@@ -38,13 +38,16 @@ const Nav = () => {
      
     </div>
 
-  
+  <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
     <p id='ham' onClick={div1click} ><GiHamburgerMenu/></p>
+    </div>
   </div>
   <div  id='div2' >
-    <p id='close' onClick={div2click} >✖</p>
+    <p id='close' style={{fontSize:'20px'}} onClick={div2click} >✖</p>
     <div id='logo2'>
+    <RouterLink to={`/`}>
       <img src="https://i.ibb.co/FgqSh66/logo.png" alt="bcb" />
+      </RouterLink>
     </div>
     <div id='info2'>
     <RouterLink to={`/about`}>
@@ -67,4 +70,4 @@ export default Nav
 
 // https://drive.google.com/file/d/19yjY4fKN_TZovaycFY2rCIYQJJkPVN6h/view?usp=sharing
 
-{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/FgqSh66/logo.png" alt="logo" border="0"></a> */}
+/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/FgqSh66/logo.png" alt="logo" border="0"></a> */

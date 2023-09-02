@@ -53,6 +53,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-// 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

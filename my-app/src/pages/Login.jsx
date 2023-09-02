@@ -40,18 +40,20 @@ const handleSubmit = async(e)=>{
     <div className="login-page">
         <Nav/>
         <div style={{minHeight:'600px',alignItems:'center',display:'flex',justifyContent:'center'}}>
-      <form  onSubmit={handleSubmit} className="form" data-testid="login-form">
+          
+      <form style={{border:'12px solid gray'}}  onSubmit={handleSubmit} className="form">
         <div>
+        <h1 style={{fontWeight:'bolder',color:'Green'}}>Login Form</h1>
           <label>
-            <input value={email}  onChange={(e)=>setEmail(e.target.value)} data-testid="email-input" type="email" placeholder="email" />
+            <input style={{border:'2px solid black',margin:'5px',borderRadius:'5px'}} value={email}  onChange={(e)=>setEmail(e.target.value)} data-testid="email-input" type="email" placeholder="email" />
           </label>
         </div>
         <div>
           <label>
-            <input
+            <input style={{border:'2px solid black',margin:'5px',borderRadius:'5px'}} 
             value={password}
             onChange={(e)=>setPassword(e.target.value)}
-              data-testid="password-input"
+              
               type="password"
               placeholder="password"
             />

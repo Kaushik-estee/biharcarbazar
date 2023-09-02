@@ -4,17 +4,20 @@ import {  Grid,
 import {useEffect,useState} from "react"
 import ProductCard from "./Productcard"
 import Footer from "./Footer"
+import Loading from "./Loading"
 
 
 const Product=()=>{
 const [data,setData] = useState([])
 const [asortdata,setAsortdata]= useState([])
 const [dsortdata,setDsortdata]= useState([])
+const [isLoading, setIsLoading] = useState(true);
 
 const fetchData = () => {
     axios.get('https://car-back-qqz1.onrender.com/cars')
       .then(response => {
         setData(response.data);
+        setIsLoading(false);
         console.log(data);
       })
       .catch(error => {
@@ -29,9 +32,10 @@ const fetchData = () => {
 const  DescData=async(page)=>{
                
   let res = 
-  await fetch(`https://car-back-qqz1.onrender.com/cars?\_sort=price&_order=desc`)
+  await fetch(`https://car-back-qqz1.onrender.com/cars?_sort=price&_order=desc`)
   let data = await res.json()
   setData(data);
+  setIsLoading(false);
 }
 const  AscData=async(page)=>{
  
@@ -39,13 +43,15 @@ const  AscData=async(page)=>{
   (`https://car-back-qqz1.onrender.com/cars?_sort=price&_order=asc`)
   let data = await res.json()
   setData(data);
+  setIsLoading(false);
 }
 const  All=async(page)=>{
  
   let res = await fetch
-  (`https://car-back-qqz1.onrender.com/cars?`)
+  (`https://car-back-qqz1.onrender.com/cars`)
   let data = await res.json()
   setData(data);
+  setIsLoading(false);
 }
 
 
@@ -77,36 +83,40 @@ All()
                     <option value="dsc">Price (High to Low)</option>
                 </select>
             </div>
-<Grid templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}> 
-    {/* mapping product */}
-{
-    data?.length>0 && data.map((e)=>{
-return (
-<GridItem key={e.id} >
-    {/* mapping in card */}
-<ProductCard
+            <div>
+              {isLoading ? (
+<Loading/>
+              ):(<Grid  templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}> 
+              {/* mapping product */}
+          {
+              data?.length>0 && data.map((e)=>{
+          return (
+          <GridItem key={e.id} >
+              {/* mapping in card */}
+          <ProductCard
+          
+          image={e.image}
+          id={e.id}
+          year={e.year}
+          price={e.price}
+          
+          make={e.make}
+          
+          model = {e.model}
+          kms = {e.kms}
+          transmission={e.transmission}
+          fuel={e.fuel}
+          exteriorcolor={e.exteriorcolor}
+          
+          />
+          </GridItem>
+               ) })
+          }
+          
+          </Grid>)}
 
-image={e.image}
-id={e.id}
-year={e.year}
-price={e.price}
-
-make={e.make}
-
-model = {e.model}
-kms = {e.kms}
-transmission={e.transmission}
-fuel={e.fuel}
-exteriorcolor={e.exteriorcolor}
-
-/>
-</GridItem>
-     ) })
-}
-
-</Grid>
 <Footer/>
-
+</div>
 </div>
     )
 }

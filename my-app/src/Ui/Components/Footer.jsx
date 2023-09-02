@@ -14,7 +14,11 @@ const Footer = () => {
         <p style={{color:'white'}}>Contact Us</p>
         </RouterLink>
         </div>
-        <div> <p style={{color:'blue',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaFacebook/></p>
+        <div> 
+          <a href="https://www.facebook.com/IdealDealersPV/">
+          <p style={{color:'blue',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaFacebook/>
+          </p>
+          </a>
         <p style={{color:'white',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaInstagram/></p></div>
         
         <div><a href="https://web.whatsapp.com/"><h1 style={{color:'green',fontSize:'50px',cursor:'pointer'}}>< FaWhatsappSquare/></h1></a></div>
