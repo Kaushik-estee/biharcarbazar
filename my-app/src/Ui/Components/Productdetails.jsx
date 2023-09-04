@@ -1,9 +1,10 @@
 import { useState,useEffect } from 'react';
-import {  Grid,Box,Flex,Stack,Text,Heading,Image,Button,UnorderedList,ListItem,useToast
+import {  Text,Heading,Image
     } from "@chakra-ui/react"
 
 import axios from 'axios';
-  import {Link as RouterLink} from "react-router-dom"
+import { BiPhoneCall } from 'react-icons/bi';
+import './Productdetails.css'
 
   import {useParams} from "react-router-dom"
 import Footer from './Footer';
@@ -42,22 +43,22 @@ const {image,year,kms,make,price,model,transmission,exteriorcolor,fuel}=product
     return (
         <div>
      
-   <Box width={'100%'} >
+   <div width={'100%'}  >
     {/* navbar---- */}
     <Nav/>
    
-    <Box id='detail' width={'98%'} margin={'auto'}  height={'600px'}>
-    <Flex justifyContent='space-around' >
-      <Box w="50%" h ="100%"  id='prodImage' >
+    <div id='detail' width={'98%'} margin={'auto'}   >
+    <div id='main' style={{minHeight:'600px'}}  >
+      <div  id='prodImage' >
         
-<Image w="auto" margin='auto' marginTop="30px" src={image} alt={kms} />
-      </Box>
+<Image id='prodImg'  src={image} alt={kms} />
+      </div>
       
-      <Box   w="50%" h ="300px"   id='proDetail' >
-        <Heading marginLeft="50%" marginTop="15px" >MAKE: {make}</Heading>
-        <Text fontWeight="bold" color="gray" marginLeft="50%" marginTop="15px" >YEAR: {year}</Text>
-        <Box id="price" >
-          <Stack marginLeft="50%" w="45%" >
+      <div     id='proDetail' >
+        <Heading > {make}</Heading>
+        <Text  >YEAR: {year}</Text>
+   
+         
           <Text    style={{color:"tomato"}}> PRICE: &#8377; {price}</Text>
           
         
@@ -68,25 +69,26 @@ const {image,year,kms,make,price,model,transmission,exteriorcolor,fuel}=product
         <Text    marginLeft="5px" id="price2" >COLOR: {exteriorcolor}</Text>
         
         <Text   marginLeft="5px" id="price2" >FUEL: {fuel}</Text>
-        
+        <div>
+        <h1>Call Now : 9297777103 </h1>
+         
        
-        </Stack>
-        </Box>
+          </div>
         
         
         
-      </Box>
-      </Flex>
-      <Flex>
+      </div>
+      </div>
+      <div>
 
 
-      </Flex>
-    </Box>
+      </div>
+    </div>
    
 {/* footer---------------------- */}
 
 
-   </Box>
+   </div>
    <div style={{bottom:'0'}}>
    <Footer/>
    </div>
