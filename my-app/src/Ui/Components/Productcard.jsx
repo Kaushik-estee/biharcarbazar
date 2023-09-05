@@ -63,14 +63,15 @@ import { color } from 'framer-motion';
               src={image}
             />
           </Box>
-          <div style={{background:"gray",borderRadius:'8px'}} >
+          <div style={{background:"#D3D3D3",borderRadius:'8px'}} >
           <Stack pt={10} align={'center'}>
            
             
           <Heading   color={'black'}  > 
               {make}
+
               </Heading>
-              <Text textDecoration={'none'}  color={'white'} fontWeight={800} fontSize={'xl'}>
+              <Text textDecoration={'none'}  color={'black'} fontWeight={800} fontSize={'xl'}>
               &#8377; {price}
               </Text>
             

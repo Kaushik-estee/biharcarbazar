@@ -22,12 +22,6 @@ const Footer = () => {
         <p style={{color:'white',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaInstagram/></p></div>
         
         <div><a href="https://web.whatsapp.com/"><h1 style={{color:'green',fontSize:'50px',cursor:'pointer'}}>< FaWhatsappSquare/></h1></a></div>
-    
-     
-        
-       
-
-      
     </div>
     <hr/>
     <div style={{width:'99%',backgroundColor:'black',margin:'auto',alignItems:'center',textAlign:'center'}}>
