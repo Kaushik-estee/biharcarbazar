@@ -10,7 +10,6 @@ import './Productdetails.css'
 import Footer from './Footer';
 import Nav from '../Nav';
 import ImageCarousel from './Image';
-import Loading from './Loading';
 
   export default function ProductDetails() {
     const [product,setProduct] = useState({})
@@ -58,9 +57,6 @@ const images = [
     {/* <div style={{width:'98%',margin:'auto',marginTop:'10px'}} >
    
     </div> */}
-    {isLoading ? (
-<Loading/>
-              ):(
    
     <div id='detail' width={'98%'} margin={'auto'}   >
     <div id='main' style={{minHeight:'600px'}}  >
@@ -138,7 +134,6 @@ const images = [
 
       </div>
     </div>
-              )}
    
 {/* footer---------------------- */}
 

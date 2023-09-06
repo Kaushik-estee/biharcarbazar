@@ -1,7 +1,7 @@
 /* Small screens */
 @media (max-width: 600px) {
     #div1{
-        background-color: gray;
+        background-color: black;
         height: 100px;
         width: 100%;
         display: flex;
@@ -17,7 +17,7 @@
     }
     #div2{
         display: none;
-       background-color: gray;
+       background-color: black;
        height: 300px;
        width: 100%;
     }
@@ -86,7 +86,7 @@
         margin: 3px;
     }
     #div1{
-        background-color: gray;
+        background-color: black;
         height: 100px;
         width: 100%;
         display: flex;
@@ -94,7 +94,7 @@
     }
     #div2{
        display: none;
-       background-color: gray;
+       background-color: black;
        height: 300px;
        width: 100%;
     }
@@ -132,7 +132,7 @@
   /* Large screens */
   @media (min-width: 1025px) {
     #div1{
-        background-color: gray;
+        background-color: black;
         height: 100px;
         width: 100%;
         display: flex;

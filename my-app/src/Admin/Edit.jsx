@@ -3,6 +3,7 @@ import React,{useState,useEffect} from 'react'
 
 import {useNavigate, useParams} from "react-router-dom"
 import Adminnav from '../Ui/Components/Adminnav'
+import Footer from '../Ui/Components/Footer'
 const Edit = () => {
     const {id} = useParams()
     const [product,setProduct] = useState({})
@@ -66,7 +67,10 @@ useEffect(()=>{
         <div>
         <Adminnav/>
         </div>
-         <form onSubmit={handleSubmit}>
+        
+        <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+         <form style={{border:'5px solid gray',margin:'10px',textAlign:'center'}} onSubmit={handleSubmit}>
+         <h1 style={{color:'gray',fontWeight:'bolder'}}>Edit Form</h1>
         <label htmlFor="year">Year:</label>
         
         <input style={{border:"1px solid black",margin:'10px'}} type="number" value={product.year} id="year" 
@@ -113,6 +117,26 @@ useEffect(()=>{
         <input style={{border:"1px solid black",margin:'10px'}}  value={product.image} type="text" id="image"
          name="image" placeholder='image' onChange={e=> setProduct({...product,image:e.target.value})}  />
         <br />
+        <label htmlFor="image2">Image2:</label>
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.image2} type="text" id="image2"
+         name="image2" placeholder='image2' onChange={e=> setProduct({...product,image2:e.target.value})}  />
+        <br />
+        <label htmlFor="image3">Image3:</label>
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.image3} type="text" id="image3"
+         name="image3" placeholder='image3' onChange={e=> setProduct({...product,image3:e.target.value})}  />
+        <br />
+        <label htmlFor="image4">Image4:</label>
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.image4} type="text" id="image4"
+         name="image4" placeholder='image4' onChange={e=> setProduct({...product,image4:e.target.value})}  />
+        <br />
+        <label htmlFor="image5">Image5:</label>
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.image5} type="text" id="image5"
+         name="image5" placeholder='image5' onChange={e=> setProduct({...product,image5:e.target.value})}  />
+        <br />
         {/* <label htmlFor="kms">Kms:</label>
         
         <input style={{border:"1px solid black",margin:'10px'}}  value={kms} type="text" id="kms" name="kms" placeholder='kms' onChange={(e)=>handleChange(e)} />
@@ -139,12 +163,12 @@ useEffect(()=>{
         <br /> */}
 
 
-        <input type="submit" name="" id="" />
+        <input style={{marginBottom:'5px',width:'120px',backgroundColor:'green',color:'white'}} type="submit" name="" id="" />
         
         {/* ...other form elements */}
       </form>
-       
-      
+      </div>
+      <Footer/>
     </div>
   )
 }

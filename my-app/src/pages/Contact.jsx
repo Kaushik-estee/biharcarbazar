@@ -26,7 +26,7 @@ const Contact = () => {
       <h1 style={{fontWeight:'bolder',fontSize:'40px',color:'black'}}>OUR SHOWROOM</h1>
       <h1 style={{fontWeight:'bold',fontSize:'20px',color:'gray'}}>
       Tata Motors Passenger Car Dealership in Muzaffarpur, Bihar at NH22, Sakri Saraiya, along with worksh
-        NH22, Sakri Saraiya., Muzaffarpur, India, Bihar</h1>
+        NH22, Sakri Saraiya., Muzaffarpur, India, Bihar, 844127</h1>
       </div>
       
     </div>

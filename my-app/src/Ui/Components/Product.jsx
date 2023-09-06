@@ -5,6 +5,7 @@ import {useEffect,useState} from "react"
 import ProductCard from "./Productcard"
 import Footer from "./Footer"
 import Loading from "./Loading"
+import Pagination from "./Pagination"
 
 
 const Product=()=>{
@@ -114,6 +115,10 @@ All()
           }
           
           </Grid>)}
+          <div style={{display:'flex',alignItems:'center',justifyContent:"center"}}>
+          <Pagination/>
+          </div>
+          
 
 <Footer/>
 </div>

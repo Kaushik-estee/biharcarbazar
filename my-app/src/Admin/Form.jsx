@@ -15,6 +15,10 @@ function Form() {
   const [fuel, setFuel] = useState("");
   const [price, setPrice] = useState(null);
   const [image, setImage] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [image4, setImage4] = useState("");
+  const [image5, setImage5] = useState("");
   const navigate = useNavigate();
 
   const navigateToAdmin = () => {
@@ -31,7 +35,11 @@ function Form() {
         exteriorcolor,
         fuel,
         price,
-        image
+        image,
+        image2,
+        image3,
+        image4,
+        image5
     
     }
     event.preventDefault();
@@ -70,6 +78,14 @@ setYear(value)
     setPrice(value)
 }else if(name === "image"){
     setImage(value)
+}else if(name === "image2"){
+  setImage2(value)
+}else if(name === "image3"){
+  setImage3(value)
+}else if(name === "image4"){
+  setImage4(value)
+}else if(name === "image5"){
+  setImage5(value)
 }
   }
  
@@ -126,6 +142,26 @@ setYear(value)
         <br />
         
         <input style={{border:"1px solid black",margin:'10px'}}  value={image} type="text" id="image" name="image" placeholder='image' onChange={(e)=>handleChange(e)} />
+        <br />
+        <label htmlFor="image">Image2:</label>
+        <br />
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={image2} type="text" id="image2" name="image2" placeholder='image2' onChange={(e)=>handleChange(e)} />
+        <br />
+        <label htmlFor="image">Image3:</label>
+        <br />
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={image3} type="text" id="image3" name="image3" placeholder='image3' onChange={(e)=>handleChange(e)} />
+        <br />
+        <label htmlFor="image">Image4:</label>
+        <br />
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={image4} type="text" id="image4" name="image4" placeholder='image4' onChange={(e)=>handleChange(e)} />
+        <br />
+        <label htmlFor="image">Image5:</label>
+        <br />
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={image5} type="text" id="image5" name="image5" placeholder='image5' onChange={(e)=>handleChange(e)} />
         <br />
 
 

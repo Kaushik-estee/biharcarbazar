@@ -72,10 +72,12 @@
   
   /* Large screens */
   @media (min-width: 1025px) {
+   
     #comm{
         display: flex;
         justify-content: space-around;
         width: 100%;
+        
     }
     #map{
         width: 48%;
@@ -104,12 +106,14 @@ justify-content: space-around;
         width: 45%;
        
         margin: 10px;
+     
 
     }
     #address{
         width: 45%;
     
         margin: 10px;
+      
     }
 
   }
