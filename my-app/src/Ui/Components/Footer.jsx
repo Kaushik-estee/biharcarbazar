@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaWhatsappSquare,FaFacebook,FaInstagram } from 'react-icons/fa';
 import {Link as RouterLink} from "react-router-dom"
+import WhatsAppButton from './Whatsapp';
 const Footer = () => {
   return (
   <  div style={{width:'100%'}}>
@@ -21,7 +22,7 @@ const Footer = () => {
           </a>
         <p style={{color:'white',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaInstagram/></p></div>
         
-        <div><a href="https://web.whatsapp.com/"><h1 style={{color:'green',fontSize:'50px',cursor:'pointer'}}>< FaWhatsappSquare/></h1></a></div>
+        <div><a href="https://web.whatsapp.com/"><h1 style={{color:'green',fontSize:'50px',cursor:'pointer'}}><WhatsAppButton/></h1></a></div>
     </div>
     <hr/>
     <div style={{width:'99%',backgroundColor:'black',margin:'auto',alignItems:'center',textAlign:'center'}}>
