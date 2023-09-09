@@ -10,10 +10,10 @@ const WhatsAppButton = () => {
   const whatsappURL = `https://wa.me/${phoneNumber}`;
 
   return (
-    <div>
+    <div  style={{position:'fixed',bottom:'20px',right:'24px',zIndex:'1000'}}>
    
       <a href={whatsappURL} target="_blank" rel="noopener noreferrer">
-        <button>< FaWhatsappSquare/></button>
+        <button >< FaWhatsappSquare/></button>
       </a>
     </div>
   );
