@@ -4,6 +4,8 @@ import {  Link } from 'react-router-dom';
 import Adminnav from '../Ui/Components/Adminnav';
 import Footer from '../Ui/Components/Footer';
 import { useNavigate } from 'react-router-dom';
+
+const API_KEY = 'cdb25a95f8ee90b2d292092496877275';
 function Form() {
   const [formData, setFormData] = useState({});
   const [year, setYear] = useState(null);
@@ -19,12 +21,26 @@ function Form() {
   const [image3, setImage3] = useState("");
   const [image4, setImage4] = useState("");
   const [image5, setImage5] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
   const navigate = useNavigate();
 
   const navigateToAdmin = () => {
     navigate('/admin'); // Replace '/about' with the desired route
 };
   // Your form handling logic will go here
+
+
+
+  ////////////////////////////////////////////////////////////
+
+
+  
+ 
+ 
+
+
+  ////////////////////////////////////////
   const handleSubmit = async (event) => {
     let obj={
         year,
@@ -164,11 +180,21 @@ setYear(value)
         <input style={{border:"1px solid black",margin:'10px'}}  value={image5} type="text" id="image5" name="image5" placeholder='image5' onChange={(e)=>handleChange(e)} />
         <br />
 
+        {/* ///////////////////////////////////////////////////////edited */}
+
+       
+        {/* /////////////////////////////////////////////////////////////// */}
+
 
         <input style={{margin:'20px',width:'80%',backgroundColor:'green',color:'white'}} type="submit" name="" id="" />
         
         {/* ...other form elements */}
       </form>
+      {/* <div>
+      <input type="file" accept="image/*" onChange={handleFileChange} name='imageUrl'  />
+      <button onClick={handleImageUpload}>Upload Image</button>
+
+      </div> */}
       </div>
       <Footer/>
     </div>

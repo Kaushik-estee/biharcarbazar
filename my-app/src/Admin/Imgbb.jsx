@@ -34,7 +34,7 @@ function ImageUploader() {
     <div>
       <input type="file" accept="image/*" onChange={handleFileChange} />
       <button onClick={handleImageUpload}>Upload Image</button>
-      {imageUrl && <img src={imageUrl} alt="Uploaded" />}
+      {/* {imageUrl && <img src={imageUrl} alt="Uploaded" />} */}
     </div>
   );
 }

@@ -11,6 +11,7 @@ import About from "../../pages/About";
 import Contact from "../../pages/Contact";
 import ProductDetails from "./Productdetails";
 import Login from "../../pages/Login";
+import ImageUploadForm from "../../Admin/Form2";
 
 
 
@@ -30,7 +31,7 @@ function AllRoutes() {
     
       
       <Route path="/admin" element={<Admin/>}/> 
-    <Route path="/add" element={<Form/>}/> 
+    <Route path="/add" element={<ImageUploadForm/>}/> 
     <Route path="/admin/:id" element={<Edit/>} />
     
   
