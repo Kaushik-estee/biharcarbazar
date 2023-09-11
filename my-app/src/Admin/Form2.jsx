@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Footer from '../Ui/Components/Footer';
+import Adminnav from '../Ui/Components/Adminnav';
+import { useNavigate } from 'react-router';
 
 
 function ImageUploadForm() {
@@ -16,6 +19,11 @@ function ImageUploadForm() {
   const [image3, setImage3] = useState(null);
   const [image4, setImage4] = useState(null);
   const [image5, setImage5] = useState(null);
+  const navigate = useNavigate();
+
+  const navigateToAdmin = () => {
+    navigate('/admin'); // Replace '/about' with the desired route
+};
 
 
     // Function to upload an image to ImgBB
@@ -110,10 +118,15 @@ const uploadImageToImgBB = async (image) => {
       // Now, you can send the name and imgUrl to your API
       sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5});
       console.log(year,imgUrl,make);
+      navigateToAdmin()
     };
   
     return (
+      <>
+      <Adminnav/>
+      
         <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+           
       <form style={{margin:'50px',border:'5px solid gray',alignItems:'center',textAlign:'center'}} onSubmit={handleSubmit}>
         <div>
             <h1>Form</h1>
@@ -172,7 +185,10 @@ const uploadImageToImgBB = async (image) => {
         </div>
         <button style={{background:'green',color:'white',margin:'7px'}} type="submit">Submit</button>
       </form>
+      
       </div>
+      <Footer/>
+      </>
     );
   }
   
