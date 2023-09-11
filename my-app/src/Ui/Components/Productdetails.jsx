@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Nav from '../Nav';
 import ImageCarousel from './Image';
 import Loading from './Loading';
+import PhoneCallButton from './Call';
 
   export default function ProductDetails() {
     const [product,setProduct] = useState({})
@@ -124,7 +125,7 @@ const images = [
               </div>
         <div style={{display:'flex',justifyContent:'space-around'}}>
           <p style={{marginTop:"9px",color:'green'}}><FiPhoneCall/>   </p>
-        <h1 style={{margin:'5px'}}>     9297777103 </h1>
+        <h1 style={{margin:'5px'}}>    9297777103 </h1>
          
        
           </div>

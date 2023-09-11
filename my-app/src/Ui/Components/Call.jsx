@@ -8,7 +8,7 @@ function PhoneCallButton() {
   };
 
   return (
-    <div style={{position:'fixed',bottom:'20px',left:'24px',zIndex:'1000'}}>
+    <div style={{position:'fixed',bottom:'80px',right:'46px',zIndex:'1000'}}>
       <button onClick={handleCallClick}>
       <BiPhoneCall/>
       </button>
