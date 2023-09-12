@@ -1,13 +1,21 @@
-// import { AuthContext } from "../Context/AuthContext";
-import {Navigate} from "react-router-dom"
-import React from "react";
-import { AuthContext } from "./Auth";
-function PrivateRoute({children}) {
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
+const Private = (props) => {
+    const {Component}=props
+    const navigate = useNavigate()
+    useEffect(()=>{
+        let login = localStorage.getItem('login')
+        if(!login){
+            navigate('/login')
+        }
+       
+    })
+  return (
     <div>
-        
+      <Component/>
     </div>
-
+  )
 }
 
-export default PrivateRoute;
+export default Private

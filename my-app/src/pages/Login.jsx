@@ -1,6 +1,6 @@
 import {Navigate} from "react-router-dom";
 
-import React from "react";
+import React, { useEffect } from "react";
 
 import Footer from "../Ui/Components/Footer";
 import Nav from "../Ui/Nav";
@@ -14,18 +14,21 @@ function Login() {
 const[email,setEmail]= React.useState("")
 const[password,setPassword]= React.useState("")
 // const{authState}= React.useContext(AuthContext)
-const navigateToAbout = () => {
-    navigate('/admin'); // Replace '/about' with the desired route
-};
+// const navigateToAbout = () => {
+//     navigate('/admin'); // Replace '/about' with the desired route
+// };
 
 const handleSubmit = async(e)=>{
   e.preventDefault()
 
   if (email=== "admin@bcb.com" && password ==="123"){
     
-    navigateToAbout()
-    // document.getElementById('auth').style.display = 'block'
-    console.log(email,password);
+    // navigateToAbout()
+
+    localStorage.setItem('login', true)
+    navigate('/admin')
+    
+  
    
   }else{
     toast.error('wrong credentials');
@@ -33,7 +36,13 @@ const handleSubmit = async(e)=>{
 }
 
 
-
+useEffect(()=>{
+  let login = localStorage.getItem('login')
+  if(login){
+      navigate('/admin')
+  }
+ 
+})
 
 
   return (
