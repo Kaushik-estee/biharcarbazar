@@ -9,28 +9,28 @@ const Footer = () => {
     
     <div style={{width:'99%',height:'100px',margin:'auto',display:'flex',justifyContent:'space-around',alignItems:'center',backgroundColor:'black'}}>
        
-        <div> 
+        {/* <div> 
         <RouterLink to={`/about`}>
               <p style={{color:'white'}}>About Us</p>
               </RouterLink>
               <RouterLink to={`/contact`}>
         <p style={{color:'white'}}>Contact Us</p>
         </RouterLink>
-        </div>
-        <div> 
+        </div> */}
+        {/* <div> 
           <a href="https://www.facebook.com/IdealDealersPV/">
           <p style={{color:'blue',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaFacebook/>
           </p>
           </a>
-        <p style={{color:'white',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaInstagram/></p></div>
+        <p style={{color:'white',fontSize:'30px',cursor:'pointer',margin:'10px'}}><FaInstagram/></p></div> */}
         
-        <div>
+        {/* <div>
           
         
        <h1 style={{color:'green',fontSize:'60px',cursor:'pointer'}}><PhoneCallButton/></h1>
        
           <h1 style={{color:'green',fontSize:'60px',cursor:'pointer'}}><WhatsAppButton/></h1>
-          </div>
+          </div> */}
     </div>
     <hr/>
     <div style={{width:'99%',backgroundColor:'black',margin:'auto',alignItems:'center',textAlign:'center'}}>

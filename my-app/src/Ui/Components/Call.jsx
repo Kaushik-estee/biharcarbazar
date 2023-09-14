@@ -8,10 +8,11 @@ function PhoneCallButton() {
   };
 
   return (
-    <div style={{position:'fixed',bottom:'80px',right:'46px',zIndex:'1000'}}>
-      <button onClick={handleCallClick}>
+    // style={{position:'fixed',bottom:'80px',right:'46px',zIndex:'1000'}}
+    <div >
+      <h1 style={{fontSize:'50px',color:'red'}}  onClick={handleCallClick}>
       <BiPhoneCall/>
-      </button>
+      </h1>
     </div>
   );
 }

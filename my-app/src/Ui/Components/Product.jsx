@@ -87,7 +87,7 @@ All()
             <div>
               {isLoading ? (
 <Loading/>
-              ):(<Grid  templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)']} gap={6}> 
+              ):(<Grid  templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']} gap={6}> 
               {/* mapping product */}
           {
               data?.length>0 && data.map((e)=>{

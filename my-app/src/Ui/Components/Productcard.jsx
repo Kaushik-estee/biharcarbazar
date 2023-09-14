@@ -7,10 +7,13 @@ import {
     Text,
     Stack,
     Image,
+    Flex,
   
   } from '@chakra-ui/react';
 import { color } from 'framer-motion';
   import {Link as RouterLink} from "react-router-dom"
+import WhatsAppButton from './Whatsapp';
+import PhoneCallButton from './Call';
   
   // const IMAGE =
   //   'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
@@ -24,7 +27,7 @@ import { color } from 'framer-motion';
         <Box
           role={'group'}
           p={6}
-          maxW={'330px'}
+          maxW={'430px'}
           w={'full'}
           bg={useColorModeValue('white', 'gray.800')}
           // boxShadow={'2xl'}
@@ -57,9 +60,9 @@ import { color } from 'framer-motion';
             }}>
             <Image
               rounded={'lg'}
-              height={230}
-              width={282}
-              objectFit={'cover'}
+              height={"100%"}
+              width={"100%"}
+              objectFit={'fit'}
               src={image}
             />
           </Box>
@@ -126,6 +129,10 @@ import { color } from 'framer-motion';
              
               
           </Stack>
+          <Flex justifyContent={'space-between'}>
+            <WhatsAppButton/>
+            <PhoneCallButton/>
+          </Flex>
           </div>
         </Box>
         </RouterLink>

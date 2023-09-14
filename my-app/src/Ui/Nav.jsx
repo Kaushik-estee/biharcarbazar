@@ -15,7 +15,7 @@ function div2click(){
 
 const Nav = () => {
   return (
- <div style={{display:'flex',justifyContent:'space-around'}} >
+ <div style={{display:'flex',justifyContent:'space-around',position:'fixed',zIndex:'1000',width:'100%'}} >
   <div  id='div1' >
     <div id='logo' style={{width:'30%'}}>
     <RouterLink to={`/`}>
