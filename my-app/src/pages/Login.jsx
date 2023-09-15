@@ -48,7 +48,7 @@ useEffect(()=>{
   return (
     <div className="login-page">
         <Nav/>
-        <div style={{minHeight:'600px',alignItems:'center',display:'flex',justifyContent:'center'}}>
+        <div style={{height:'100vh',alignItems:'center',display:'flex',justifyContent:'center'}}>
           
       <form style={{border:'12px solid gray'}}  onSubmit={handleSubmit} className="form">
         <div>

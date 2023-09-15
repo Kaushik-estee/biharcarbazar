@@ -101,6 +101,11 @@ All()
           <div className="popup-content">
           <p id='close'  onClick={togglePopup} >✖</p>
             <h2>Filter Options</h2>
+            <select style={{margin:'30px',border:'1px solid gray',borderRadius:'5px',marginTop:'120px'}} onChange={HandleChange}  > Sort by: All 
+                    <option value="all">Sort by Price: All</option>
+                    <option value="asc">Price (Low to High)</option>
+                    <option value="dsc">Price (High to Low)</option>
+                </select>
             {/* Add filter options here */}
             
           </div>

@@ -24,7 +24,7 @@ import "./ProductCard.css"
     return (
       <Center py={12}>
         
-        <RouterLink to={`/${id}`}>
+   
         <Box
           role={'group'}
           p={6}
@@ -37,6 +37,7 @@ import "./ProductCard.css"
           zIndex={1}
           boxShadow= {"rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"}
           >
+                 <RouterLink to={`/${id}`}>
           <Box
             rounded={'lg'}
             mt={-12}
@@ -67,24 +68,26 @@ import "./ProductCard.css"
               src={image}
             />
           </Box>
+          </RouterLink>
           <div style={{background:"#EDF0F9",borderRadius:'8px'}} >
           <Stack pt={10} align={'center'}>
            
-            
+          <RouterLink to={`/${id}`}>
           <Heading   color={'black'}  > 
               {make}
 
               </Heading>
+              </RouterLink>
               <Text textDecoration={'none'}  color={'black'} fontWeight={800} fontSize={'xl'}>
               &#8377; {price}
               </Text>
-            
+              <RouterLink to={`/${id}`}>
             <Stack direction={'column'} align={'center'} margin={'5px'}>
               <div style={{display:'flex',justifyContent:'space-between'}}>
-              <div style={{width:'59%'}}>
+              <div style={{width:'50%'}}>
             <div style={{display:'flex'}}>
              {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" /> */}
-             <h3 style={{color:'gray'}}>REG-YEAR:</h3>
+             <h3 style={{color:'gray'}}>YEAR:</h3>
             <Text marginTop={'2px'}  textDecoration={'none'} color={'black'} fontSize={'sm'} fontWeight={'bold'} >
               {year}
             </Text>
@@ -132,7 +135,7 @@ import "./ProductCard.css"
               
               </div>
             </Stack>
-             
+            </RouterLink>
              
               
           </Stack>
@@ -142,7 +145,7 @@ import "./ProductCard.css"
           </div>
           </div>
         </Box>
-        </RouterLink>
+  
       </Center>
     );
   }
