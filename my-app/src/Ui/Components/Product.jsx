@@ -7,13 +7,16 @@ import Footer from "./Footer"
 import Loading from "./Loading"
 import Pagination from "./Pagination"
 import Nav from "../Nav"
-
+import{BsFillFilterSquareFill} from "react-icons/bs"
+import Popup from "./Test"
+import './Popup.css'
 
 const Product=()=>{
 const [data,setData] = useState([])
 const [asortdata,setAsortdata]= useState([])
 const [dsortdata,setDsortdata]= useState([])
 const [isLoading, setIsLoading] = useState(true);
+const [isPopupOpen, setIsPopupOpen] = useState(false);
 
 const fetchData = () => {
     axios.get('https://car-back-qqz1.onrender.com/cars')
@@ -74,19 +77,40 @@ All()
   
    }
 
-   
+   const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+ 
     return(
 <div  >
   <div ><Nav/></div>
   
-<div id="header"  >
+<div id="header" style={{display:'flex',justifyContent:'space-between'}}  >
+  <div>
                 
                 <select style={{margin:'30px',border:'1px solid gray',borderRadius:'5px',marginTop:'120px'}} onChange={HandleChange}  > Sort by: All 
                     <option value="all">Sort by Price: All</option>
                     <option value="asc">Price (Low to High)</option>
                     <option value="dsc">Price (High to Low)</option>
                 </select>
+                </div>
+                <div>
+                <button id='popbtn' style={{fontSize:'40px',color:'black',marginTop:'120px',marginRight:'30px',color:'#D4C5C7',cursor:'pointer'}} onClick={togglePopup}><BsFillFilterSquareFill/></button>
+      {isPopupOpen && (
+        <div className="popup">
+          <div className="popup-content">
+          <p id='close'  onClick={togglePopup} >✖</p>
+            <h2>Filter Options</h2>
+            {/* Add filter options here */}
+            
+          </div>
+        </div>
+      )}
+                
+                </div>
             </div>
+            
+   
             <div>
               {isLoading ? (
 <Loading/>

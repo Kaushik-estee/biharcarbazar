@@ -19,7 +19,7 @@ const Nav = () => {
   <div  id='div1' >
     <div id='logo' style={{width:'30%'}}>
     <RouterLink to={`/`}>
-      <img style={{width: '100px',height:'100px'}} src="https://i.ibb.co/FgqSh66/logo.png" alt="bcb" />
+      <img style={{width: '120px',height:'100px',border:'none'}} src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
       </RouterLink>
     </div>
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'30%'}} id='call'>
@@ -44,7 +44,7 @@ const Nav = () => {
     <p id='close' style={{fontSize:'20px'}} onClick={div2click} >✖</p>
     <div id='logo2'>
     <RouterLink to={`/`}>
-      <img src="https://i.ibb.co/FgqSh66/logo.png" alt="bcb" />
+      <img src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
       </RouterLink>
     </div>
     <div id='info2'>
@@ -69,3 +69,6 @@ export default Nav
 // https://drive.google.com/file/d/19yjY4fKN_TZovaycFY2rCIYQJJkPVN6h/view?usp=sharing
 
 /* <a href="https://imgbb.com/"><img src="https://i.ibb.co/FgqSh66/logo.png" alt="logo" border="0"></a> */
+{/* <a href="https://ibb.co/xDw5PwP"><img src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="Bihar-Car-Bazaar-Logo-01" border="0"></a> */}
+
+{/* <a href="https://ibb.co/xMgkZ7P"><img src="https://i.ibb.co/GVM6m5B/Bihar-Car-Bazaar-Logotype-02.png" alt="Bihar-Car-Bazaar-Logotype-02" border="0"></a> */}

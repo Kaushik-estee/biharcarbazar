@@ -9,12 +9,14 @@ import AllRoutes from './Ui/Components/AllRoutes';
 
 
 
+
 // import Navbarmenu from './components/menu/Navbarmenu';
 
 function App() {
   return (
-    <Box>
-<AllRoutes/>
+    <Box> 
+       <AllRoutes/>
+
 
 
     </Box>

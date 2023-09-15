@@ -1,0 +1,29 @@
+/* Small screens */
+@media (max-width: 600px) {
+    #callIcons{
+        display: flex;
+        justify-content: space-between;
+        margin: 3px;
+    }
+ 
+ 
+
+}
+  /* Medium screens */
+  @media (min-width: 601px) and (max-width: 1024px) {
+
+    #callIcons{
+        display: none;
+    }
+        
+
+  }
+  
+  /* Large screens */
+  @media (min-width: 1025px) {
+    #callIcons{
+        display: none;
+    }
+    
+
+  }
