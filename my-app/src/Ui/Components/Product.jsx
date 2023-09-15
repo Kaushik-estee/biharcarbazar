@@ -6,6 +6,7 @@ import ProductCard from "./Productcard"
 import Footer from "./Footer"
 import Loading from "./Loading"
 import Pagination from "./Pagination"
+import Nav from "../Nav"
 
 
 const Product=()=>{
@@ -75,10 +76,12 @@ All()
 
    
     return(
-<div>
-<div id="header" >
+<div  >
+  <div ><Nav/></div>
+  
+<div id="header"  >
                 
-                <select style={{margin:'30px',border:'1px solid gray',borderRadius:'5px'}} onChange={HandleChange}  > Sort by: All 
+                <select style={{margin:'30px',border:'1px solid gray',borderRadius:'5px',marginTop:'120px'}} onChange={HandleChange}  > Sort by: All 
                     <option value="all">Sort by Price: All</option>
                     <option value="asc">Price (Low to High)</option>
                     <option value="dsc">Price (High to Low)</option>

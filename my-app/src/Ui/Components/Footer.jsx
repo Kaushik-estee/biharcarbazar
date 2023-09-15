@@ -7,9 +7,12 @@ const Footer = () => {
   return (
   <  div style={{width:'100%'}}>
     
-    <div style={{width:'99%',height:'100px',margin:'auto',display:'flex',justifyContent:'space-around',alignItems:'center',backgroundColor:'black'}}>
-       
+    <div style={{width:'99%',height:'100px',margin:'auto',display:'flex',justifyContent:'space-around',alignItems:'center',backgroundColor:'#A39BA8'}}>
+    <RouterLink to={`/admin`}>
+      <p style={{color:'white'}}>Admin </p>
+              </RouterLink>
         {/* <div> 
+        
         <RouterLink to={`/about`}>
               <p style={{color:'white'}}>About Us</p>
               </RouterLink>
@@ -33,7 +36,7 @@ const Footer = () => {
           </div> */}
     </div>
     <hr/>
-    <div style={{width:'99%',backgroundColor:'black',margin:'auto',alignItems:'center',textAlign:'center'}}>
+    <div style={{width:'99%',backgroundColor:'#A39BA8',margin:'auto',alignItems:'center',textAlign:'center'}}>
     <p style={{color:'white'}}>Copyright © 2023 </p>
     </div>
     </div>

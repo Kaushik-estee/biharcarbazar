@@ -59,6 +59,7 @@ const images = [
     {/* <div style={{width:'98%',margin:'auto',marginTop:'10px'}} >
    
     </div> */}
+    <div style={{height:'100px'}}></div>
     {isLoading ? (
 <Loading/>
               ):(

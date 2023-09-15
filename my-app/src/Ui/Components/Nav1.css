@@ -1,7 +1,7 @@
 /* Small screens */
 @media (max-width: 600px) {
     #div1{
-        background-color: black;
+        background-color: #A39BA8;
         height: 100px;
         width: 100%;
         display: flex;
@@ -17,8 +17,8 @@
     }
     #div2{
         display: none;
-       background-color: black;
-       height: 300px;
+       background-color: #A39BA8;
+       height: 250px;
        width: 100%;
     }
     /* #div1 p {
@@ -86,7 +86,7 @@
         margin: 3px;
     }
     #div1{
-        background-color: black;
+        background-color: #A39BA8;
         height: 100px;
         width: 100%;
         display: flex;
@@ -95,8 +95,8 @@
     }
     #div2{
        display: none;
-       background-color: black;
-       height: 300px;
+       background-color: #A39BA8;
+       height: 250px;
        width: 100%;
     }
     /* #div1 p {
@@ -133,7 +133,7 @@
   /* Large screens */
   @media (min-width: 1025px) {
     #div1{
-        background-color: black;
+        background-color: #A39BA8;
         height: 100px;
         width: 100%;
         display: flex;

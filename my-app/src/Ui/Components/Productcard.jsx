@@ -66,7 +66,7 @@ import PhoneCallButton from './Call';
               src={image}
             />
           </Box>
-          <div style={{background:"#D3D3D3",borderRadius:'8px'}} >
+          <div style={{background:"#EDF0F9",borderRadius:'8px'}} >
           <Stack pt={10} align={'center'}>
            
             

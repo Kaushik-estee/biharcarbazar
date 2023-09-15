@@ -8,6 +8,7 @@ const Contact = () => {
   return (
     <div>
         <Nav/>
+        <div style={{height:'100px'}}></div>
     <div id='contactDetails'>
       <div id='details'>
         <h1 style={{fontWeight:'bolder',fontSize:'40px',color:'black'}}>Contact Details</h1>

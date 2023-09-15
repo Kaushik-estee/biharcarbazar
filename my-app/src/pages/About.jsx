@@ -6,6 +6,7 @@ const About = () => {
   return (
     <div>
         <Nav/>
+        <div style={{height:'100px'}}></div>
       <div style={{width:'96%',margin:'auto'}}>
         <h1 style={{fontWeight:'bolder',marginTop:'20px',fontSize:'24px',color:'green'}}>Ideal Dealers for Passenger Cars</h1>
         <h3>In the world of passenger cars, finding the ideal dealership can be a game-changer in your car-buying journey. Whether you're seeking a sleek sedan, a versatile SUV, or a compact car for urban commuting, the dealership you choose plays a pivotal role in your overall experience. Ideal dealers for passenger cars are more than just showrooms; they are trusted partners committed to providing exceptional service and delivering the perfect vehicle for your needs.</h3>

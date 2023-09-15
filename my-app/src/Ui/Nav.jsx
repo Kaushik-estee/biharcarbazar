@@ -32,9 +32,7 @@ const Nav = () => {
       <RouterLink to={`/contact`}>
       <p>Contact Us</p>
       </RouterLink>
-      <RouterLink to={`/admin`}>
-      <p>Admin </p>
-              </RouterLink>
+     
      
     </div>
 
@@ -56,9 +54,9 @@ const Nav = () => {
       <RouterLink to={`/contact`}>
       <p>Contact Us</p>
       </RouterLink>
-      <RouterLink to={`/login`}>
+      {/* <RouterLink to={`/login`}>
       <p>Admin Login</p>
-              </RouterLink>
+              </RouterLink> */}
     </div>
   </div>
  </div>
