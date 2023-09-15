@@ -83,42 +83,48 @@ import "./ProductCard.css"
               <div style={{display:'flex',justifyContent:'space-between'}}>
               <div style={{width:'59%'}}>
             <div style={{display:'flex'}}>
-             <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" />
-            <Text margin={'4px'}  textDecoration={'none'} color={'black'} fontSize={'sm'} >
+             {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" /> */}
+             <h3 style={{color:'gray'}}>REG-YEAR:</h3>
+            <Text marginTop={'2px'}  textDecoration={'none'} color={'black'} fontSize={'sm'} fontWeight={'bold'} >
               {year}
             </Text>
             </div>
               
-              <div style={{display:'flex',marginTop:'5px'}}>
-              <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" />
-              <Text  color={'black'}  > 
+              <div style={{display:'flex',marginTop:'0px'}}>
+              {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" /> */}
+              <h3 style={{color:'gray'}}>KMS:</h3>
+              <Text  color={'black'} fontWeight={'bold'}   > 
               {kms}
               </Text>
               </div>
-              <div style={{display:'flex',marginTop:'5px'}}>
+              {/* <div style={{display:'flex',marginTop:'5px'}}>
               <img style={{margin:'5px',width:'18px',height:'18px'}} 
               src="https://cdn.bigboytoyz.com/new-version/attributes/setting-icon.png" alt="" /> 
+                 <h3 style={{color:'gray'}}>TRANSMISSION:</h3>
               <Text color={'black'}  > 
                 {transmission}
               </Text>
-              </div>
+              </div> */}
               </div>
               <div style={{width:'40%'}}>
-              <div style={{display:'flex'}}>
+              {/* <div style={{display:'flex'}}>
               <img style={{margin:'5px',width:'20px',height:'20px'}}  src="https://cdn.bigboytoyz.com/new-version/attributes/exterior-color.png" alt="" />
+              <h3 style={{color:'gray'}}>COLOR:</h3>
               <Text  margin={'5px'}  color={'black'}  > 
               {exteriorcolor}
               </Text>
-              </div>
+              </div> */}
               <div style={{display:'flex'}}>
-              <img style={{margin:'5px',width:'23px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/cartype-icon.png" alt="" />
-              <Text margin={'5px'} color={'black'}  > 
+              {/* <img style={{margin:'5px',width:'23px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/cartype-icon.png" alt="" /> */}
+              <h3 style={{color:'gray'}}>MODEL:</h3>
+              <Text margin={'0px'} color={'black'} fontWeight={'bold'}   > 
                {model}
               </Text>
               </div>
               <div style={{display:'flex'}}>
-              <img style={{margin:'5px',width:'20px',height:'20px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/fueltype-icon.png" alt="" />
-              <Text  color={'black'}  > 
+              {/* <img style={{margin:'5px',width:'20px',height:'20px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/fueltype-icon.png" alt="" /> */}
+              <h3 style={{color:'gray'}}>FUEL:</h3>
+              <Text  color={'black'} fontWeight={'bold'}   > 
                {fuel}
               </Text>
               </div>
