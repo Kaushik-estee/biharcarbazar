@@ -19,7 +19,7 @@ import "./ProductCard.css"
   // const IMAGE =
   //   'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
   
-  export default function ProductCard({year,id,make,price,image,model,kms,transmission,exteriorcolor,fuel}) {
+  export default function ProductCard({year,id,make,price,image,model,kms,transmission,exteriorcolor,fuel,booked}) {
  
     return (
       <Center py={12}>
@@ -60,12 +60,19 @@ import "./ProductCard.css"
                 filter: 'blur(20px)',
               },
             }}>
+                   {booked === 'yes' ? (
+            <>
+            
+              <button style= {{width:'80px',height:'30px',zIndex:'2000',position:'absolute',background:'red',color:'white',marginTop:'3px',borderBottomRightRadius:'11px',borderTopRightRadius:'11px'}}>BOOKED</button>
+            </>
+          ) : null}
             <Image
               rounded={'lg'}
               height={"100%"}
               width={"100%"}
               objectFit={'fit'}
               src={image}
+              position={'absolute'}
             />
           </Box>
           </RouterLink>
@@ -73,12 +80,12 @@ import "./ProductCard.css"
           <Stack pt={10} align={'center'}>
            
           <RouterLink to={`/${id}`}>
-          <Heading   color={'black'}  > 
+          <Heading   color={'#00008B'}  > 
               {make}
 
               </Heading>
               </RouterLink>
-              <Text textDecoration={'none'}  color={'black'} fontWeight={800} fontSize={'xl'}>
+              <Text textDecoration={'none'}  color={'#00008B'} fontWeight={800} fontSize={'xl'}> PRICE  
               &#8377; {price}
               </Text>
               <RouterLink to={`/${id}`}>
@@ -88,15 +95,15 @@ import "./ProductCard.css"
             <div style={{display:'flex'}}>
              {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" /> */}
              <h3 style={{color:'gray'}}>YEAR:</h3>
-            <Text marginTop={'2px'}  textDecoration={'none'} color={'black'} fontSize={'sm'} fontWeight={'bold'} >
+            <Text marginTop={'2px'}  textDecoration={'none'} color={'#00008B'} fontSize={'sm'} fontWeight={'bold'} >
               {year}
             </Text>
             </div>
               
               <div style={{display:'flex',marginTop:'0px'}}>
               {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" /> */}
-              <h3 style={{color:'gray'}}>KMS:</h3>
-              <Text  color={'black'} fontWeight={'bold'}   > 
+              <h3 style={{color:'gray'}}>KM:</h3>
+              <Text  color={'#00008B'} fontWeight={'bold'}   > 
               {kms}
               </Text>
               </div>
@@ -120,16 +127,18 @@ import "./ProductCard.css"
               <div style={{display:'flex'}}>
               {/* <img style={{margin:'5px',width:'23px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/cartype-icon.png" alt="" /> */}
               <h3 style={{color:'gray'}}>MODEL:</h3>
-              <Text margin={'0px'} color={'black'} fontWeight={'bold'}   > 
+              <Text margin={'0px'} color={'#00008B'} fontWeight={'bold'}   > 
                {model}
               </Text>
               </div>
               <div style={{display:'flex'}}>
               {/* <img style={{margin:'5px',width:'20px',height:'20px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/fueltype-icon.png" alt="" /> */}
               <h3 style={{color:'gray'}}>FUEL:</h3>
-              <Text  color={'black'} fontWeight={'bold'}   > 
-               {fuel}
+              <Text  color={'#00008B'} fontWeight={'bold'}   > 
+         {fuel}
               </Text>
+          
+            
               </div>
               </div>
               
@@ -144,7 +153,11 @@ import "./ProductCard.css"
             <PhoneCallButton/>
           </div>
           </div>
+         
+       
+          
         </Box>
+
   
       </Center>
     );

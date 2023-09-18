@@ -17,13 +17,13 @@ const Nav = () => {
   return (
  <div style={{display:'flex',justifyContent:'space-around',position:'fixed',zIndex:'1000',width:'100%'}} >
   <div  id='div1' >
-    <div id='logo' style={{width:'30%'}}>
+    <div id='logo' >
     <RouterLink to={`/`}>
-      <img style={{width: '120px',height:'100px',border:'none'}} src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
+      <img  src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
       </RouterLink>
     </div>
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'30%'}} id='call'>
-      <h1 id='num'>SELL/BUY : 9297777103</h1>
+      <h1 id='num'>TO BUY/SELL CALL ON : 9297777103</h1>
     </div>
     <div id='info' style={{width:'30%'}}>
     <RouterLink to={`/about`}>
@@ -41,7 +41,7 @@ const Nav = () => {
     </div>
   </div>
   <div  id='div2' >
-    <p id='close' style={{fontSize:'20px'}} onClick={div2click} >✖</p>
+    <p id='closediv2' style={{fontSize:'20px'}} onClick={div2click} >✖</p>
     <div id='logo2'>
     <RouterLink to={`/`}>
       <img src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
@@ -72,3 +72,6 @@ export default Nav
 {/* <a href="https://ibb.co/xDw5PwP"><img src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="Bihar-Car-Bazaar-Logo-01" border="0"></a> */}
 
 {/* <a href="https://ibb.co/xMgkZ7P"><img src="https://i.ibb.co/GVM6m5B/Bihar-Car-Bazaar-Logotype-02.png" alt="Bihar-Car-Bazaar-Logotype-02" border="0"></a> */}
+{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/bdZYD2y/3dgifmaker95104.gif" alt="3dgifmaker95104" border="0"></a> */}
+
+{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/wCYMbJN/3dgifmaker81070.gif" alt="3dgifmaker81070" border="0"></a> */}

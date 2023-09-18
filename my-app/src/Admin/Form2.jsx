@@ -19,6 +19,12 @@ function ImageUploadForm() {
   const [image3, setImage3] = useState(null);
   const [image4, setImage4] = useState(null);
   const [image5, setImage5] = useState(null);
+  const [booked, setBooked] = useState('');
+  const[relativeProduct1,setRelativeProduct1] = useState(null)
+  const[relativeProduct2,setRelativeProduct2] = useState(null)
+  const[relativeProduct3,setRelativeProduct3] = useState(null)
+  const[relativeProduct4,setRelativeProduct4] = useState(null)
+
   const navigate = useNavigate();
 
   const navigateToAdmin = () => {
@@ -96,6 +102,21 @@ const uploadImageToImgBB = async (image) => {
         const file = e.target.files[0];
         setImage5(file);
       };
+      const handleOptionChange = (event) => {
+        setBooked(event.target.value);
+      };
+      const handlerelativeProduct1 = (e)=>{
+        setRelativeProduct1(e.target.value)
+      }
+      const handlerelativeProduct2 = (e)=>{
+        setRelativeProduct2(e.target.value)
+      }
+      const handlerelativeProduct3 = (e)=>{
+        setRelativeProduct3(e.target.value)
+      }
+      const handlerelativeProduct4 = (e)=>{
+        setRelativeProduct4(e.target.value)
+      }
   
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -116,7 +137,7 @@ const uploadImageToImgBB = async (image) => {
 
   
       // Now, you can send the name and imgUrl to your API
-      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5});
+      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5, booked:booked,relativeProduct1:relativeProduct1,relativeProduct2:relativeProduct2,relativeProduct3:relativeProduct3,relativeProduct4:relativeProduct4});
       console.log(year,imgUrl,make);
       navigateToAdmin()
     };
@@ -145,7 +166,7 @@ const uploadImageToImgBB = async (image) => {
         </div>
         <div>
           <label>Kms:</label>
-          <input type="text" value={kms} onChange={handleKmsChange} style={{border:'1px solid black',margin:'5px'}} />
+          <input type="number" value={kms} onChange={handleKmsChange} style={{border:'1px solid black',margin:'5px'}} />
         </div>
         <div>
           <label>Transmission:</label>
@@ -183,6 +204,57 @@ const uploadImageToImgBB = async (image) => {
           <label>Upload Image5:</label>
           <input type="file" accept="image/*" onChange={handleImageChange5} />
         </div>
+        {/* /////////////////////////////// */}
+
+        <div>
+      <h2>Booking Status</h2>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            value= 'no'
+            // checked={booked === 'no'}
+            defaultChecked
+            onChange={handleOptionChange}
+          />
+          NO
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            value="yes"
+            // checked={booked === 'yes'}
+            onChange={handleOptionChange}
+          />
+          YES
+        </label>
+      </div>
+   
+      
+    </div>
+    <div>
+          <label>relativeProduct1:</label>
+          <input type="number" value={relativeProduct1} onChange={handlerelativeProduct1} style={{border:'1px solid black',margin:'5px'}} />
+        </div>
+        <div>
+          <label>relativeProduct2:</label>
+          <input type="number" value={relativeProduct2} onChange={handlerelativeProduct2} style={{border:'1px solid black',margin:'5px'}} />
+        </div>
+        <div>
+          <label>relativeProduct3:</label>
+          <input type="number" value={relativeProduct3} onChange={handlerelativeProduct3} style={{border:'1px solid black',margin:'5px'}} />
+        </div>
+        <div>
+          <label>relativeProduct4:</label>
+          <input type="number" value={relativeProduct4} onChange={handlerelativeProduct4} style={{border:'1px solid black',margin:'5px'}} />
+        </div>
+
+
+        {/* ///////////////////////////// */}
         <button style={{background:'green',color:'white',margin:'7px'}} type="submit">Submit</button>
       </form>
       

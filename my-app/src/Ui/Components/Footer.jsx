@@ -7,9 +7,9 @@ const Footer = () => {
   return (
   <  div style={{width:'100%'}}>
     
-    <div style={{width:'99%',height:'100px',margin:'auto',display:'flex',justifyContent:'space-around',alignItems:'center',backgroundColor:'#A39BA8'}}>
+    <div style={{width:'99%',height:'65px',margin:'auto',display:'flex',backgroundColor:'#EDF0F9',justifyContent:'flex-end'}}>
     <RouterLink to={`/admin`}>
-      <p style={{color:'white'}}>Admin </p>
+      <p style={{color:'#00008B',marginTop:'20px',marginRight:'20px',fontWeight:'bold'}}>Admin </p>
               </RouterLink>
         {/* <div> 
         
@@ -36,8 +36,8 @@ const Footer = () => {
           </div> */}
     </div>
     <hr/>
-    <div style={{width:'99%',backgroundColor:'#A39BA8',margin:'auto',alignItems:'center',textAlign:'center'}}>
-    <p style={{color:'white'}}>Copyright © 2023 </p>
+    <div style={{width:'99%',backgroundColor:'#EDF0F9',margin:'auto',alignItems:'center',textAlign:'center'}}>
+    <p style={{color:'#00008B'}}>Copyright © 2023 </p>
     </div>
     </div>
   )
