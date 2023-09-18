@@ -22,12 +22,14 @@ const Nav = () => {
       <img  src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
       </RouterLink>
     </div>
+    <div id='blank' style={{width:"12%"}}></div>
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'30%'}} id='call'>
       <h1 id='num'>TO BUY/SELL CALL ON : 9297777103</h1>
     </div>
-    <div id='info' style={{width:'30%'}}>
+  
+    <div id='info' style={{width:'18%'}}>
     <RouterLink to={`/about`}>
-      <p>About Us</p>
+      <p id='infoAbout'>About Us</p>
       </RouterLink>
       <RouterLink to={`/contact`}>
       <p>Contact Us</p>

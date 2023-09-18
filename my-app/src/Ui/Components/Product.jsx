@@ -112,23 +112,65 @@ All()
         <div className="popup">
           <div className="popup-content">
           <p id='close'  onClick={togglePopup} >✖</p>
-            <h2>Filter Options</h2>
-            <select style={{margin:'30px',border:'1px solid gray',borderRadius:'5px',marginTop:'120px'}} onChange={HandleChange}  > Sort by: All 
+            {/* <h2>Filter Options</h2> */}
+            {/* <select style={{margin:'30px',border:'1px solid gray',borderRadius:'5px',marginTop:'120px'}} onChange={HandleChange}  > Sort by: All 
                     <option value="all">Sort by Price: All</option>
                     <option value="asc">Price (Low to High)</option>
                     <option value="dsc">Price (High to Low)</option>
-                </select>
+                </select> */}
             {/* Add filter options here */}
             {/* filter by km */}
-            <div style={{display:'flex'}}>
-              <button>0 to 5000</button>
-              <button>5000 to 10000</button>
-              <button>10000 to 20000</button>
-              <button>20000&above</button>
+            <div>
+              <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>BUDGET</h1>
+            <div style={{display:'flex',alignItems:'center',textAlign:"center",justifyContent:"center"}}>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>0 to 5000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>5000 to 10000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>10000 to 20000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>20000&above</button>
 
             </div>
+            </div>
+            {/* ////////////////////////////////////// */}
+            <div>
+              <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>REGISTRATION YEAR</h1>
+            <div style={{display:'flex',alignItems:'center',textAlign:"center",justifyContent:"center"}}>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>2000 - 2010</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>2010 - 2015</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>2015 - 2020</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>ALL</button>
 
+            </div>
+            </div>
+            {/* /////////////////////////////////////////////// */}
+            <div>
+              <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>KMS DRIVEN</h1>
+            <div style={{display:'flex',alignItems:'center',textAlign:"center",justifyContent:"center"}}>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>BRAND NEW</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>0 - 5000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>5000-10000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>10000-15000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>15000-20000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>20000 ABOVE</button>
+
+            </div>
+            </div>
+            <div>
+            <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>BRAND</h1>
+            <select style={{width:'70%',border:'1px solid black',borderRadius:'4px',height:'40px'}} name="" id="">SELECT BRAND
+            <option value="">SELECT BRAND</option>
+            <option value="">AUDI</option>
+            <option value="">BMW</option>
+            <option value="">TATA</option>
+
+            <option value="">HONDA</option>
+            <option value="">HYUNDIE</option>
+            <option value="">TOYOTA</option>
             
+          
+            
+            </select>
+            </div>
+            <button style={{width:'80%',background:'#F26522',borderRadius:'8px',color:'white',marginTop:'15px',height:'40px',cursor:'pointer'}}>APPLY FILTER</button>
           </div>
         </div>
       )}
@@ -188,3 +230,4 @@ export default Product
 
 
 {/* <a href="https://ibb.co/f9YkZh7"><img src="https://i.ibb.co/tzMqn75/file-svg-filter-icon-11562874693tj59mpz35p.png" alt="file-svg-filter-icon-11562874693tj59mpz35p" border="0"></a> */}
+// ✖

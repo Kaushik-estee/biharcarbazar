@@ -1,5 +1,8 @@
 /* Small screens */
 @media (max-width: 600px) {
+    #blank{
+        display: none;
+    }
     #div1{
         background-color: #EDF0F9;
         height: 100px;
@@ -68,6 +71,9 @@
 }
   /* Medium screens */
   @media (min-width: 601px) and (max-width: 1024px) {
+    #blank{
+        display: none;
+    }
  
     #logo2 img{
         width: 100px;
@@ -167,12 +173,14 @@
         width: 25%;
         /* border: 2px solid black; */
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         text-align: center;
         align-items: center;
         
+        
        
     }
+    
     #info p{
         color:  #00008B;
         position: relative;
@@ -180,7 +188,7 @@
         padding-right: 10px; 
     }
 
-    #info p::after {
+    #infoAbout::after {
         content: '';
         position: absolute;
         top: 0;

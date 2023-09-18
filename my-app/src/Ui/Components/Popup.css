@@ -15,24 +15,27 @@
   /* Styles for the close button */
   #close {
     position: absolute;
-    
-    background-color: transparent;
+   
+   
     border: none;
     cursor: pointer;
     margin-left: -20px;
     margin-top: -20px;
     font-size: 20px;
-    color: white;
+    color: black;
   }
   
   /* Styles for the popup content */
   .popup-content {
     background-color: #fff;
     padding: 20px;
+    
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 78%;
-    height: 400px;
+    width: 90%;
+    
+    height: 470px;
+    align-items: center;
   }
   
