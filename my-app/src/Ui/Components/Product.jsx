@@ -90,8 +90,11 @@ All()
   <div ><Nav/></div>
   
 <div id="header" style={{display:'flex',justifyContent:'space-between',width:'100%'}}  >
-  
-                <div style={{display:'flex',marginTop:'120px',width:'100%',justifyContent:'flex-end'}}>
+  <div id="totalres" style={{width:'20%'}}>
+  <h1 style={{marginTop:'120px',marginLeft:'25px',color:'#00008B',fontWeight:"bold"}}>TOTAL {total} RESULTS FOUND</h1>
+  </div>
+                     
+                <div id="filter">
                   <div style={{width:'200px',display:"flex"}}>
                   <p style={{fontWeight:'bold',color:'#00008B',fontSize:'17px',margin:"5px"}}>Filter</p>
                 <button id='popbtn' style={{fontSize:'35px',color:'black',color:'#D4C5C7',cursor:'pointer'}} onClick={togglePopup}>

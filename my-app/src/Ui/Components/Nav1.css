@@ -53,6 +53,7 @@
         color:  #00008B;
         cursor: pointer;
         margin: 3px;
+        font-weight: bold;
         
     }
     #info2{
@@ -90,6 +91,7 @@
         color:  #00008B;
         cursor: pointer;
         margin: 3px;
+        font-weight: bold;
         
     }
     #div1{
@@ -186,6 +188,7 @@
         position: relative;
         display: inline-block;
         padding-right: 10px; 
+        font-weight: bold;
     }
 
     #infoAbout::after {

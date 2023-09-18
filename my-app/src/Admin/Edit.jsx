@@ -7,15 +7,7 @@ import Footer from '../Ui/Components/Footer'
 const Edit = () => {
     const {id} = useParams()
     const [product,setProduct] = useState({})
-    const [yea, setYea] = useState(null);
-    const [mak, setMak] = useState("");
-    const [mode, setMode] = useState("");
-    const [km, setKm] = useState("");
-    const [transmissio, setTransmissio] = useState("");
-    const [exteriorcolo, setExteriorcolo] = useState("");
-    const [fue, setFue] = useState("");
-    const [pric, setPric] = useState(null);
-    const [imag, setImag] = useState("");
+
     const navigate = useNavigate()
     
     console.log(id)
@@ -28,27 +20,7 @@ useEffect(()=>{
     })
     .catch((err)=>console.log(err))
 },[id])
-// const { year,
-//     make,
-//     model,
-//     kms,
-//     transmission,
-//     exteriorcolor,
-//     fuel,
-//     price,
-//     image}=product
-// console.log(product)
 
-// const handleChange=(e)=>{
-//     let {value,name} = e.target
-//     if(name ==="year"){
-//     setYea(value)
-//     }else if(name === "make"){
-//         setMak(value)
-//     }else if(name === "model"){
-//         setMode(value)
-//     }
-//       }
 
       const handleSubmit = async (event) => {
      
@@ -137,30 +109,59 @@ useEffect(()=>{
         <input style={{border:"1px solid black",margin:'10px'}}  value={product.image5} type="text" id="image5"
          name="image5" placeholder='image5' onChange={e=> setProduct({...product,image5:e.target.value})}  />
         <br />
-        {/* <label htmlFor="kms">Kms:</label>
+
+        <label htmlFor="relativeProduct1">Relative Product1:</label>
         
-        <input style={{border:"1px solid black",margin:'10px'}}  value={kms} type="text" id="kms" name="kms" placeholder='kms' onChange={(e)=>handleChange(e)} />
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct1} type="text" id="relativeProduct1"
+         name="relativeProduct1" placeholder='relativeProduct1' onChange={e=> setProduct({...product,relativeProduct1:e.target.value})}  />
         <br />
-        <label htmlFor="transmission">Transmission:</label>
+        <label htmlFor="relativeProduct2">Relative Product2:</label>
         
-        <input style={{border:"1px solid black",margin:'10px'}}  value={transmission} type="text" id="transmission" name="transmission" placeholder='transmission' onChange={(e)=>handleChange(e)} />
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct2} type="text" id="relativeProduct2"
+         name="relativeProduct2" placeholder='relativeProduct2' onChange={e=> setProduct({...product,relativeProduct2:e.target.value})}  />
         <br />
-        <label htmlFor="exteriorcolor">Exterior color:</label>
+        <label htmlFor="relativeProduct3">Relative Product3:</label>
         
-        <input style={{border:"1px solid black",margin:'10px'}}  value={exteriorcolor} type="text" id="exteriorcolor" name="exteriorcolor" placeholder='exteriorcolor' onChange={(e)=>handleChange(e)} />
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct3} type="text" id="relativeProduct3"
+         name="relativeProduct3" placeholder='relativeProduct3' onChange={e=> setProduct({...product,relativeProduct3:e.target.value})}  />
         <br />
-        <label htmlFor="fuel">Fuel:</label>
+        <label htmlFor="irelativeProduct4">Relative Product4:</label>
         
-        <input style={{border:"1px solid black",margin:'10px'}}  value={fuel} type="text" id="fuel" name="fuel" placeholder='fuel' onChange={(e)=>handleChange(e)} />
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct4} type="text" id="relativeProduct4"
+         name="relativeProduct4" placeholder='relativeProduct4' onChange={e=> setProduct({...product,relativeProduct4:e.target.value})}  />
         <br />
-        <label htmlFor="price">Price:</label>
+
+
+        {/* ////////////////////////////////////////////////////// */}
+        <div>
+      <h2>Booking Status</h2>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            value= "no"
+            onChange={e=> setProduct({...product,booked:e.target.value})}
+          />
+          NO
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options"
+            value= "yes"
+            // checked={booked === 'yes'}
+            onChange={e=> setProduct({...product,booked:e.target.value})}
+          />
+          YES
+        </label>
+      </div>
+   
+      
+    </div>
         
-        <input style={{border:"1px solid black",margin:'10px'}}  value={price} type="number" id="price" name="price" placeholder='price' onChange={(e)=>handleChange(e)} />
-        <br />
-        <label htmlFor="image">Image:</label>
-        
-        <input style={{border:"1px solid black",margin:'10px'}}  value={image} type="text" id="image" name="image" placeholder='image' onChange={(e)=>handleChange(e)} />
-        <br /> */}
 
 
         <input style={{marginBottom:'5px',width:'120px',backgroundColor:'green',color:'white'}} type="submit" name="" id="" />

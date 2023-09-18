@@ -77,73 +77,54 @@ import "./ProductCard.css"
           </Box>
           </RouterLink>
           <div style={{background:"#EDF0F9",borderRadius:'8px'}} >
-          <Stack pt={10} align={'center'}>
-           
+          <Stack  >
+          <div>
           <RouterLink to={`/${id}`}>
-          <Heading   color={'#00008B'}  > 
-              {make}
+       
+          <Heading   color={'#00008B'} margin={'10px'}  > 
+              {year} {make} {fuel}
 
               </Heading>
               </RouterLink>
-              <Text textDecoration={'none'}  color={'#00008B'} fontWeight={800} fontSize={'xl'}> PRICE  
+              </div>
+              <Text textDecoration={'none'}  color={'#00008B'} fontWeight={500} margin={'10px'} fontSize={'xl'}> PRICE  
               &#8377; {price}
               </Text>
               <RouterLink to={`/${id}`}>
-            <Stack direction={'column'} align={'center'} margin={'5px'}>
-              <div style={{display:'flex',justifyContent:'space-between'}}>
-              <div style={{width:'50%'}}>
-            <div style={{display:'flex'}}>
+            
+              <div style={{display:'flex',width:'110%',justifyContent:'space-around'}}>
+              
+            <div style={{width:'36%',margin:"11px",borderRight:'1px solid gray'}} >
              {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" /> */}
-             <h3 style={{color:'gray'}}>YEAR:</h3>
+             <h3 id='regYear' style={{color:'gray',fontWeight:'bold'}}>REG. YEAR</h3>
             <Text marginTop={'2px'}  textDecoration={'none'} color={'#00008B'} fontSize={'sm'} fontWeight={'bold'} >
               {year}
             </Text>
             </div>
               
-              <div style={{display:'flex',marginTop:'0px'}}>
+              <div style={{width:'20%',margin:"10px",borderRight:'1px solid gray'}}>
               {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" /> */}
-              <h3 style={{color:'gray'}}>KM:</h3>
+              <h3 id='km' style={{color:'gray',fontWeight:'bold'}}>KM</h3>
               <Text  color={'#00008B'} fontWeight={'bold'}   > 
               {kms}
               </Text>
               </div>
-              {/* <div style={{display:'flex',marginTop:'5px'}}>
-              <img style={{margin:'5px',width:'18px',height:'18px'}} 
-              src="https://cdn.bigboytoyz.com/new-version/attributes/setting-icon.png" alt="" /> 
-                 <h3 style={{color:'gray'}}>TRANSMISSION:</h3>
-              <Text color={'black'}  > 
-                {transmission}
-              </Text>
-              </div> */}
-              </div>
-              <div style={{width:'40%'}}>
-              {/* <div style={{display:'flex'}}>
-              <img style={{margin:'5px',width:'20px',height:'20px'}}  src="https://cdn.bigboytoyz.com/new-version/attributes/exterior-color.png" alt="" />
-              <h3 style={{color:'gray'}}>COLOR:</h3>
-              <Text  margin={'5px'}  color={'black'}  > 
-              {exteriorcolor}
-              </Text>
-              </div> */}
-              <div style={{display:'flex'}}>
-              {/* <img style={{margin:'5px',width:'23px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/cartype-icon.png" alt="" /> */}
-              <h3 style={{color:'gray'}}>MODEL:</h3>
-              <Text margin={'0px'} color={'#00008B'} fontWeight={'bold'}   > 
-               {model}
-              </Text>
-              </div>
-              <div style={{display:'flex'}}>
-              {/* <img style={{margin:'5px',width:'20px',height:'20px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/fueltype-icon.png" alt="" /> */}
-              <h3 style={{color:'gray'}}>FUEL:</h3>
+              <div style={{width:'50%',margin:"10px"}}>
+              {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" /> */}
+              <h3 style={{color:'gray',fontWeight:'bold'}}>FUEL TYPE</h3>
               <Text  color={'#00008B'} fontWeight={'bold'}   > 
-         {fuel}
+              {fuel}
               </Text>
-          
+              </div>
+           
+              
             
-              </div>
-              </div>
+             
+             
+              
               
               </div>
-            </Stack>
+            
             </RouterLink>
              
               
