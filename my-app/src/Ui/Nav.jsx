@@ -29,10 +29,10 @@ const Nav = () => {
   
     <div id='info' style={{width:'18%'}}>
     <RouterLink to={`/about`}>
-      <p id='infoAbout'>About Us</p>
+      <p id='infoAbout'>ABOUT </p>
       </RouterLink>
       <RouterLink to={`/contact`}>
-      <p>Contact Us</p>
+      <p>CONTACT </p>
       </RouterLink>
      
      
@@ -51,10 +51,10 @@ const Nav = () => {
     </div>
     <div id='info2'>
     <RouterLink to={`/about`}>
-      <p>About Us</p>
+      <p>ABOUT </p>
       </RouterLink>
       <RouterLink to={`/contact`}>
-      <p>Contact Us</p>
+      <p>CONTACT </p>
       </RouterLink>
       {/* <RouterLink to={`/login`}>
       <p>Admin Login</p>

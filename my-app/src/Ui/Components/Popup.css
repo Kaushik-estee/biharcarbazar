@@ -3,13 +3,19 @@
   
   /* Small screens */
 @media (max-width: 600px) {
+  #filterText{
+    display: none;
+  }
+  #sortByText{
+    display: none;
+  }
 
   #totalres{
     display: none;
   }
   #filter{
     display: flex;
-    margin-top: 120px;
+    margin-top: 175px;
     width: 100%;
     justify-content: flex-end;
   }
@@ -45,7 +51,7 @@
     padding: 20px;
     
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    
     text-align: center;
     width: 90%;
     
@@ -62,7 +68,7 @@
 }
 #filter{
   display: flex;
-  margin-top: 120px;
+  margin-top: 175px;
   width: 100%;
   justify-content: flex-end;
 }
@@ -98,7 +104,7 @@
   padding: 20px;
   
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  
   text-align: center;
   width: 90%;
   
@@ -143,7 +149,7 @@
     padding: 20px;
     
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    
     text-align: center;
     width: 90%;
     
@@ -152,9 +158,10 @@
   }
   #filter{
     display: flex;
-    margin-top: 120px;
-    width: 25%;
+    margin-top: 175px;
+    width: 33%;
     justify-content: flex-end;
+   
   }
   
  

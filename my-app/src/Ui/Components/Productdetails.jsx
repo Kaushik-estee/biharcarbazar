@@ -12,6 +12,7 @@ import Nav from '../Nav';
 import ImageCarousel from './Image';
 import Loading from './Loading';
 import PhoneCallButton from './Call';
+import PhoneCallButton2 from './Callbutton';
 
   export default function ProductDetails() {
     const [product,setProduct] = useState({})
@@ -52,6 +53,7 @@ const images = [
 
     return (
         <div>
+          
      
    <div width={'100%'}  >
     {/* navbar---- */}
@@ -73,19 +75,19 @@ const images = [
       </div>
       
       <div     id='proDetail' >
-        <h1 style={{fontWeight:'bold',color:'orange'}}>Details</h1>
-        <Heading > {make}</Heading>
-        <Text    style={{color:"tomato",fontWeight:'bold',color:'black'}}>  &#8377; {price}</Text>
+        <h1 style={{fontWeight:'bold',color:'#F26522'}}>Details</h1>
+        <Heading color={'#27005D'} > {make}</Heading>
+        <Text    style={{fontWeight:'bold',color:'#27005D'}}>  &#8377; {price}</Text>
         <div style={{display:'flex'}}>
              <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" />
-            <Text  >
+            <Text color={'#27005D'} fontWeight={'500'}  >
               {year}
             </Text>
             </div>
         {/* <Text  >YEAR: {year}</Text> */}
         <div style={{display:'flex',marginTop:'5px'}}>
               <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" />
-              <Text  color={'black'}  > 
+              <Text  color={'#27005D'} fontWeight={'500'}  > 
               {kms}
               </Text>
               </div>
@@ -94,7 +96,7 @@ const images = [
           <div style={{display:'flex',marginTop:'5px'}}>
               <img style={{margin:'5px',width:'18px',height:'18px'}} 
               src="https://cdn.bigboytoyz.com/new-version/attributes/setting-icon.png" alt="" /> 
-              <Text color={'black'}  > 
+              <Text color={'#27005D'} fontWeight={'500'}  > 
                 {transmission}
               </Text>
               </div>
@@ -104,7 +106,7 @@ const images = [
         {/* <Text   marginLeft="5px" id="price2" > MODEL: {model}</Text> */}
         <div style={{display:'flex'}}>
               <img style={{margin:'5px',width:'23px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/cartype-icon.png" alt="" />
-              <Text margin={'5px'} color={'black'}  > 
+              <Text margin={'5px'} color={'#27005D'} fontWeight={'500'} > 
                {model}
               </Text>
               </div>
@@ -112,7 +114,7 @@ const images = [
         {/* <Text    marginLeft="5px" id="price2" >COLOR: {exteriorcolor}</Text> */}
         <div style={{display:'flex'}}>
               <img style={{margin:'5px',width:'20px',height:'20px'}}  src="https://cdn.bigboytoyz.com/new-version/attributes/exterior-color.png" alt="" />
-              <Text  margin={'5px'}  color={'black'}  > 
+              <Text  margin={'5px'}  color={'#27005D'} fontWeight={'500'}  > 
               {exteriorcolor}
               </Text>
               </div>
@@ -120,13 +122,17 @@ const images = [
         {/* <Text   marginLeft="5px" id="price2" >FUEL: {fuel}</Text> */}
         <div style={{display:'flex'}}>
               <img style={{margin:'5px',width:'20px',height:'20px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/fueltype-icon.png" alt="" />
-              <Text  color={'black'}  > 
+              <Text  color={'#27005D'} fontWeight={'500'} > 
                {fuel}
               </Text>
               </div>
-        <div style={{display:'flex',justifyContent:'space-around'}}>
-          <p style={{marginTop:"9px",color:'green'}}><FiPhoneCall/>   </p>
-        <h1 style={{margin:'5px'}}>    9297777103 </h1>
+        <div style={{justifyContent:'space-around'}}>
+          <div id='numshown'>
+            <h1 style={{fontWeight:'600',color:'#27005D'}}>Call Now : 9297777103</h1>
+          </div >
+          <div id='call2'> <PhoneCallButton2/></div>
+       
+        
          
        
           </div>

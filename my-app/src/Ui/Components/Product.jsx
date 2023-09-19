@@ -88,29 +88,35 @@ All()
     return(
 <div  >
   <div ><Nav/></div>
+  <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
   
-<div id="header" style={{display:'flex',justifyContent:'space-between',width:'100%'}}  >
-  <div id="totalres" style={{width:'20%'}}>
-  <h1 style={{marginTop:'120px',marginLeft:'25px',color:'#00008B',fontWeight:"bold"}}>TOTAL {total} RESULTS FOUND</h1>
+<div id="header" style={{display:'flex',justifyContent:'space-between',width:'90%',height:"250px"}}  >
+  <div id="totalres" style={{width:'25%'}}>
+  <h1 style={{marginTop:'175px',marginLeft:'25px',color:'#27005D',fontWeight:"bold",fontSize:'1.4rem'}}>TOTAL 20 RESULTS FOUND</h1>
   </div>
                      
-                <div id="filter">
-                  <div style={{width:'200px',display:"flex"}}>
-                  <p style={{fontWeight:'bold',color:'#00008B',fontSize:'17px',margin:"5px"}}>Filter</p>
-                <button id='popbtn' style={{fontSize:'35px',color:'black',color:'#D4C5C7',cursor:'pointer'}} onClick={togglePopup}>
-                <BsFillFilterSquareFill/>
+                <div id="filter" >
+                  <div style={{width:"28%"}}>
+                  <div style={{display:"flex"}}>
+                  <p id="filterText" style={{fontWeight:'700',color:'#27005D',fontSize:'1rem',marginTop:"7px",marginRight:'5px'}}>FILTER</p>
+                <button id='popbtn' style={{color:'black',color:'#D4C5C7',cursor:'pointer',marginRight:"7px",borderRadius:'10px'}} onClick={togglePopup}>
+                <img style={{width:'35px',height:"40px",border:'1px solid gray',borderRadius:'10px'}} src="https://i.ibb.co/HNKgwM2/transparentfilrter-fotor-bg-remover-20230919122145.png" alt="" />
                 </button>
                 </div>
-                <div>
-                  <div style={{display:'flex',width:'250px',justifyContent:'space-between',justifyContent:'flex-end'}}>
-                <h3 style={{fontWeight:'bold',color:'#00008B',fontSize:'17px',margin:'5px'}}>Sort By</h3>
-                <select style={{border:'1px solid gray',borderRadius:'5px',margin:'5px'}} onChange={HandleChange}  > Sort by: All 
-                    <option value="all">Sort by Price: All</option>
-                    <option value="asc">Price (Low to High)</option>
-                    <option value="dsc">Price (High to Low)</option>
+                </div>
+                <div  style={{width:"72%"}}>
+                  <div style={{display:'flex',justifyContent:'space-between',justifyContent:'flex-end'}}>
+                <h3 id="sortByText" style={{fontWeight:'700',color:'#27005D',fontSize:'1rem',marginTop:"7px",marginRight:'7px'}}>SORT BY</h3>
+                <select style={{border:'1px solid gray',borderRadius:'8px',marginRight:'5px',color:'#27005D',fontWeight:"500",height:"40px",width:'180px'}} onChange={HandleChange}  > Sort by: All 
+                    <option value="all"> Price: All</option>
+                    <option value="asc">Price- Low To High </option>
+                    <option value="dsc">Price- High To Low</option>
                 </select>
                 </div>
                 </div>
+               
+               
+
       {isPopupOpen && (
         <div className="popup">
           <div className="popup-content">
@@ -126,10 +132,10 @@ All()
             <div>
               <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>BUDGET</h1>
             <div style={{display:'flex',alignItems:'center',textAlign:"center",justifyContent:"center"}}>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>0 to 5000</button>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>5000 to 10000</button>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>10000 to 20000</button>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>20000&above</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>BELOW 10 LACKS</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>10 TO 15 LACKS</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>15 TO 20 LACKS</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>20 LACKS& ABOVE</button>
 
             </div>
             </div>
@@ -149,11 +155,11 @@ All()
               <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>KMS DRIVEN</h1>
             <div style={{display:'flex',alignItems:'center',textAlign:"center",justifyContent:"center"}}>
               <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>BRAND NEW</button>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>0 - 5000</button>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>5000-10000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>0 - 10000</button>
               <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>10000-15000</button>
               <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>15000-20000</button>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>20000 ABOVE</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>20000-40000</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer'}}>40000 ABOVE</button>
 
             </div>
             </div>
@@ -181,11 +187,13 @@ All()
                 </div>
             </div>
             
-   
-            <div>
+            <div id="hr" style={{width:"90%",margin:"auto",height:"30px"}}>
+                <hr/>
+                </div>
+            <div style={{width:'90%'}}>
               {isLoading ? (
 <Loading/>
-              ):(<Grid  templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']} gap={6}> 
+              ):(<Grid  templateColumns={['repeat(1, 1fr)','repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)','repeat(3, 1fr)']} gap={6}> 
               {/* mapping product */}
           {
               data?.length>0 && data.map((e)=>{
@@ -224,6 +232,8 @@ All()
           </div>
           
 
+
+</div>
 <Footer/>
 </div>
 </div>
@@ -234,3 +244,5 @@ export default Product
 
 {/* <a href="https://ibb.co/f9YkZh7"><img src="https://i.ibb.co/tzMqn75/file-svg-filter-icon-11562874693tj59mpz35p.png" alt="file-svg-filter-icon-11562874693tj59mpz35p" border="0"></a> */}
 // ✖
+
+{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/HNKgwM2/transparentfilrter-fotor-bg-remover-20230919122145.png" alt="transparentfilrter-fotor-bg-remover-20230919122145" border="0"></a> */}
