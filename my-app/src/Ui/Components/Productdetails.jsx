@@ -39,7 +39,8 @@ const images = [
   product.image2,
   product.image3,
   product.image4,
-  product.image5
+  product.image5,
+  product.image6
   
  
   // Add more image URLs as needed

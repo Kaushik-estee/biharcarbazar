@@ -19,6 +19,7 @@ function ImageUploadForm() {
   const [image3, setImage3] = useState(null);
   const [image4, setImage4] = useState(null);
   const [image5, setImage5] = useState('https://www.nomore.org.au/sites/all/themes/nomore/img/noMore.jpg');
+  const [image6, setImage6] = useState('https://www.nomore.org.au/sites/all/themes/nomore/img/noMore.jpg');
   const [booked, setBooked] = useState('');
   const[relativeProduct1,setRelativeProduct1] = useState(null)
   const[relativeProduct2,setRelativeProduct2] = useState(null)
@@ -102,6 +103,10 @@ const uploadImageToImgBB = async (image) => {
         const file = e.target.files[0];
         setImage5(file);
       };
+      const handleImageChange6 = (e) => {
+        const file = e.target.files[0];
+        setImage6(file);
+      };
       const handleOptionChange = (event) => {
         setBooked(event.target.value);
       };
@@ -127,6 +132,7 @@ const uploadImageToImgBB = async (image) => {
       const imgbbResponse3 = await uploadImageToImgBB(image3);
       const imgbbResponse4 = await uploadImageToImgBB(image4);
       const imgbbResponse5 = await uploadImageToImgBB(image5);
+      const imgbbResponse6 = await uploadImageToImgBB(image6);
   
       // Extract the ImgBB URL from the response
       const imgUrl = imgbbResponse.data.data.url;
@@ -134,10 +140,11 @@ const uploadImageToImgBB = async (image) => {
       const imgUrl3 = imgbbResponse3.data.data.url;
       const imgUrl4 = imgbbResponse4.data.data.url;
       const imgUrl5 = imgbbResponse5.data.data.url;
+      const imgUrl6 = imgbbResponse6.data.data.url;
 
   
       // Now, you can send the name and imgUrl to your API
-      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5, booked:booked,relativeProduct1:relativeProduct1,relativeProduct2:relativeProduct2,relativeProduct3:relativeProduct3,relativeProduct4:relativeProduct4});
+      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5,image6:imgUrl6, booked:booked,relativeProduct1:relativeProduct1,relativeProduct2:relativeProduct2,relativeProduct3:relativeProduct3,relativeProduct4:relativeProduct4});
       console.log(year,imgUrl,make);
       navigateToAdmin()
     };
@@ -203,6 +210,10 @@ const uploadImageToImgBB = async (image) => {
         <div>
           <label>Upload Image5:</label>
           <input type="file" accept="image/*" onChange={handleImageChange5} />
+        </div>
+        <div>
+          <label>Upload Image6:</label>
+          <input type="file" accept="image/*" onChange={handleImageChange6} />
         </div>
         {/* /////////////////////////////// */}
 

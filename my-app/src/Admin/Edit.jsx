@@ -109,6 +109,11 @@ useEffect(()=>{
         <input style={{border:"1px solid black",margin:'10px'}}  value={product.image5} type="text" id="image5"
          name="image5" placeholder='image5' onChange={e=> setProduct({...product,image5:e.target.value})}  />
         <br />
+        <label htmlFor="image6">Image6:</label>
+        
+        <input style={{border:"1px solid black",margin:'10px'}}  value={product.image6} type="text" id="image6"
+         name="image6" placeholder='image6' onChange={e=> setProduct({...product,image6:e.target.value})}  />
+        <br />
 
         <label htmlFor="relativeProduct1">Relative Product1:</label>
         
