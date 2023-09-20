@@ -13,6 +13,8 @@ import ProductDetails from "./Productdetails";
 import Login from "../../pages/Login";
 import ImageUploadForm from "../../Admin/Form2";
 import Private from "./PrivateRoute";
+import ImageUploadForm2 from "../../Admin/Form3";
+import Edit2 from "../../Admin/Edit2";
 
 
 
@@ -33,8 +35,8 @@ function AllRoutes() {
       
       {/* <Route path="/admin" element={<Admin/>}/>  */}
       <Route path="/admin" element={<Private Component={Admin}/>}/>
-    <Route path="/add" element={<Private Component={ImageUploadForm}/>}/> 
-    <Route path="/admin/:id" element={<Private Component={Edit}/>} />
+    <Route path="/add" element={<Private Component={ImageUploadForm2}/>}/> 
+    <Route path="/admin/:id" element={<Private Component={Edit2}/>} />
     
   
     

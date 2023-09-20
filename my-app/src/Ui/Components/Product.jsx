@@ -132,10 +132,16 @@ All()
             <div>
               <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>BUDGET</h1>
             <div style={{display:'flex',alignItems:'center',textAlign:"center",justifyContent:"center"}}>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>BELOW 10 LACKS</button>
+              {/* <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>BELOW 10 LACKS</button>
               <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>10 TO 15 LACKS</button>
               <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>15 TO 20 LACKS</button>
-              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>20 LACKS& ABOVE</button>
+              <button style={{background:'#EDF0F9',margin:"2px",borderRadius:'5px',cursor:'pointer',minHeight:'50px'}}>20 LACKS& ABOVE</button> */}
+              <div style={{display:"flex",margin:"5px"}}>
+                {/* <h3 style={{margin:'5px',fontWeight:"600"}}>Min</h3> */}
+              <input style={{border:'1px solid black',margin:'5px',borderRadius:'5px',width:'6rem'}} type="number" name="" id="" placeholder="Minimum" /></div>
+              <div style={{display:"flex",margin:"5px"}}>
+                {/* <h3 style={{margin:'5px',fontWeight:"600"}}>Max</h3> */}
+              <input  style={{border:'1px solid black',margin:'5px',borderRadius:'5px',width:'6rem'}} type="number" name="" id="" placeholder="Maximum" /></div>
 
             </div>
             </div>
@@ -167,13 +173,19 @@ All()
             <h1 style={{color:'black',fontWeight:"bold",margin:"10px"}}>BRAND</h1>
             <select style={{width:'70%',border:'1px solid black',borderRadius:'4px',height:'40px'}} name="" id="">SELECT BRAND
             <option value="">SELECT BRAND</option>
-            <option value="">AUDI</option>
-            <option value="">BMW</option>
             <option value="">TATA</option>
-
-            <option value="">HONDA</option>
-            <option value="">HYUNDIE</option>
-            <option value="">TOYOTA</option>
+        <option value="">MAHINDRA</option>
+        <option value="">AUDI</option>
+        <option value="">BMW</option>
+        <option value="">RENAULT</option>
+        <option value="">DATSON</option>
+        <option value="">HONDA</option>
+        <option value="">HYUNDAI</option>
+        <option value="">FORD</option>
+        <option value="">TOYOTA</option>
+        <option value="">MARUTI SUZUKI</option>
+        <option value="">HONDA</option>
+        <option value="">KIA</option>
             
           
             
