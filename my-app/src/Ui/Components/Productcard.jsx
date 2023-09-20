@@ -57,7 +57,12 @@ import "./ProductCard.css"
             
               <button style= {{width:'80px',height:'30px',zIndex:'2000',position:'absolute',background:'red',color:'white',marginTop:'8px',borderBottomRightRadius:'11px',borderTopRightRadius:'11px'}}>BOOKED</button>
             </>
-          ) : null}
+          ) : booked === 'sold'?  (
+            <>
+            
+              <button style= {{width:'80px',height:'30px',zIndex:'2000',position:'absolute',background:'green',color:'white',marginTop:'8px',borderBottomRightRadius:'11px',borderTopRightRadius:'11px'}}>SOLD</button>
+            </>
+          ):null}
             <Image
               rounded={'xl'}
               height={"100%"}

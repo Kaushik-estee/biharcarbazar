@@ -19,9 +19,9 @@ const [isLoading, setIsLoading] = useState(true);
 const [isPopupOpen, setIsPopupOpen] = useState(false);
 const[total,setTotal]=useState(1)
 const [page, setPage] = useState(1);
-const[price,setPrice] = useState({lte:null,gte:null})
-const [year,setYear] =useState({lte:null,gte:null})
-const [kms,setKms] =useState({lte:null,gte:null})
+const[price,setPrice] = useState({lte:100000000,gte:0})
+const [year,setYear] =useState({lte:2023,gte:2000})
+const [kms,setKms] =useState({lte:300000,gte:0})
 const [make,setMake] = useState('')
 
 
@@ -100,19 +100,29 @@ const applyFilter=async()=>{
   // if(price.gte>price.lte||year.gte>year.lte||kms.gte>kms.lte||make===""){
   //   alert("Put Details in correct Order")
   // }
- 
-  
+
     let res = 
     await fetch(`https://car-back-qqz1.onrender.com/cars?_page=${page}&_limit=9&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`)
     let data = await res.json()
-    if(data.length===0){
+  
+    
+  
+      
+     if(data.length===0){
       alert('no data found please fill data again')
     }else{
       setData(data);
       setIsLoading(false);
      console.log(year.lte,year.gte,price.lte,price.gte,kms.gte,kms.lte,make);
-      setIsPopupOpen(!isPopupOpen);
+     setIsPopupOpen(!isPopupOpen);
+     setPrice({gte:0,lte:100000000})
+     setYear({gte:2000,lte:2023})
+     setKms({gte:0,lte:300000})
     }
+  
+ 
+  
+    
  
   
  

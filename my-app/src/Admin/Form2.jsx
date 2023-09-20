@@ -4,6 +4,9 @@ import Footer from '../Ui/Components/Footer';
 import Adminnav from '../Ui/Components/Adminnav';
 import { useNavigate } from 'react-router';
 
+{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/KhRSXnV/show-Roomadress.png" alt="show-Roomadress" border="0"></a> */}
+{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/2FyTbsQ/contact.png" alt="contact" border="0"></a> */}
+
 
 function ImageUploadForm() {
     const [year, setYear] = useState('');
@@ -18,9 +21,9 @@ function ImageUploadForm() {
     const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
   const [image4, setImage4] = useState(null);
-  const [image5, setImage5] = useState('https://www.nomore.org.au/sites/all/themes/nomore/img/noMore.jpg');
-  const [image6, setImage6] = useState('https://www.nomore.org.au/sites/all/themes/nomore/img/noMore.jpg');
-  const [booked, setBooked] = useState('');
+  const [image5, setImage5] = useState('https://i.ibb.co/KhRSXnV/show-Roomadress.png');
+  const [image6, setImage6] = useState('https://i.ibb.co/2FyTbsQ/contact.png');
+  const [booked, setBooked] = useState('no');
   const[relativeProduct1,setRelativeProduct1] = useState(null)
   const[relativeProduct2,setRelativeProduct2] = useState(null)
   const[relativeProduct3,setRelativeProduct3] = useState(null)
@@ -67,9 +70,9 @@ const uploadImageToImgBB = async (image) => {
       const handleKmsChange = (e) => {
         setKms(e.target.value);
       };
-      const handleTransmissionChange = (e) => {
-        setTransmission(e.target.value);
-      };
+    //   const handleTransmissionChange = (e) => {
+    //     setTransmission(e.target.value);
+    //   };
       const handleColorChange = (e) => {
         setExteriorcolor(e.target.value);
       };
@@ -110,6 +113,9 @@ const uploadImageToImgBB = async (image) => {
       const handleOptionChange = (event) => {
         setBooked(event.target.value);
       };
+      const handleOptionChangeTransmission = (event)=>{
+        setTransmission(event.target.value)
+      }
       const handlerelativeProduct1 = (e)=>{
         setRelativeProduct1(e.target.value)
       }
@@ -159,14 +165,68 @@ const uploadImageToImgBB = async (image) => {
         <div>
             <h1>Form</h1>
         </div>
-        <div>
+        {/* <div>
           <label>Year:</label>
           <input type="number" value={year} onChange={handleYearChange} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
-        <div>
+        </div> */}
+          <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center"}}>
+      <h1>Select Year:</h1>
+      <select style={{border:'1px solid black'}} onChange={handleYearChange } value={year}>
+        <option value="">select</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+
+      </select>
+      
+    </div>
+        {/* <div>
           <label>Make:</label>
           <input type="text" value={make} onChange={handleMakeChange} style={{border:'1px solid black',margin:'5px'}}  />
-        </div>
+        </div> */}
+            <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center",marginTop:'7PX'}}>
+      <h1>Select Make:</h1>
+      <select style={{border:'1px solid black'}} onChange={handleMakeChange } value={make}>
+        <option value="TATA">TATA</option>
+        <option value="MAHINDRA">MAHINDRA</option>
+        <option value="AUDI">AUDI</option>
+        <option value="BMW">BMW</option>
+        <option value="RENAULT">RENAULT</option>
+        <option value="DATSON">DATSON</option>
+        <option value="HONDA">HONDA</option>
+        <option value="HYUNDAI">HYUNDAI</option>
+        <option value="FORD">FORD</option>
+        <option value="TOYOTA">TOYOTA</option>
+        <option value="MARUTI SUZUKI">MARUTI SUZUKI</option>
+        <option value="HONDA">HONDA</option>
+        <option value="KIA">KIA</option>
+      
+
+        
+      </select>
+      
+    </div>
         <div>
           <label>Model:</label>
           <input type="text" value={model} onChange={handleModelChange} style={{border:'1px solid black',margin:'5px'}} />
@@ -175,23 +235,71 @@ const uploadImageToImgBB = async (image) => {
           <label>Kms:</label>
           <input type="number" value={kms} onChange={handleKmsChange} style={{border:'1px solid black',margin:'5px'}} />
         </div>
-        <div>
+        {/* <div>
           <label>Transmission:</label>
           <input type="text" value={transmission} onChange={handleTransmissionChange}  style={{border:'1px solid black',margin:'5px'}}/>
-        </div>
+        </div> */}
+           <div>
+      <h2>Transmissiom</h2>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options2"
+            value= 'AUTOMATIC'
+            // checked={booked === 'no'}
+          
+            onChange={handleOptionChangeTransmission}
+          />
+        AUTOMATIC
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="options2"
+            value="MANUAL"
+            // checked={booked === 'yes'}
+            onChange={handleOptionChangeTransmission}
+          />
+          MANUAL
+        </label>
+      </div>
+   
+      
+    </div>
         <div>
           <label>Exterior Color:</label>
           <input type="text" value={exteriorcolor} onChange={handleColorChange} style={{border:'1px solid black',margin:'5px'}} />
         </div>
-        <div>
+        {/* <div>
           <label>Fuel:</label>
           <input type="text" value={fuel} onChange={handleFuelChange} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
+        </div> */}
+     <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center"}}>
+      <h1>Fuel Type:</h1>
+      <select style={{border:'1px solid black'}} onChange={handleFuelChange } value={fuel}>
+        <option value="PETROL">PETROL</option>
+        <option value="DIESEL">DIESEL</option>
+        <option value="CNG">CNG</option>
+        <option value="ELECTRIC">ELECTRIC</option>
+        <option value="HYBRID">HYBRID</option>
+        
+     
+
+      </select>
+      
+    </div>
+
+        
+        
         <div>
           <label>Price:</label>
           <input type="number" value={price} onChange={handlePriceChange} style={{border:'1px solid black',margin:'5px'}} />
         </div>
         <div>
+            <h3 style={{color:'blue',fontWeight:"bold"}}>Please Upload Atleast 4 images</h3>
           <label>Upload Image1:</label>
           <input type="file" accept="image/*" onChange={handleImageChange} />
         </div>
@@ -217,7 +325,7 @@ const uploadImageToImgBB = async (image) => {
         </div>
         {/* /////////////////////////////// */}
 
-        <div>
+        {/* <div>
       <h2>Booking Status</h2>
       <div>
         <label>
@@ -226,7 +334,7 @@ const uploadImageToImgBB = async (image) => {
             name="options"
             value= 'no'
             // checked={booked === 'no'}
-            defaultChecked
+           
             onChange={handleOptionChange}
           />
           NO
@@ -245,6 +353,19 @@ const uploadImageToImgBB = async (image) => {
         </label>
       </div>
    
+      
+    </div> */}
+            <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center",marginTop:'7PX'}}>
+      <h1>Booking Status:</h1>
+      <select style={{border:'1px solid black'}} onChange={handleOptionChange} value={booked}>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+        <option value="sold">Sold</option>
+      
+      
+
+        
+      </select>
       
     </div>
     <div>

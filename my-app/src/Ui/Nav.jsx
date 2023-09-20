@@ -12,6 +12,9 @@ function div2click(){
   document.getElementById('div1').style.display='flex'
   document.getElementById('div2').style.display='none'
   }
+  const refreshHome=()=>{
+    window.location.reload()
+  }
 
 const Nav = () => {
   return (
@@ -19,7 +22,7 @@ const Nav = () => {
   <div  id='div1' >
     <div id='logo' >
     <RouterLink to={`/`}>
-      <img  src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
+      <img onClick={refreshHome} src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
       </RouterLink>
     </div>
     <div id='blank' style={{width:"12%"}}></div>
@@ -46,7 +49,7 @@ const Nav = () => {
     <p id='closediv2' style={{fontSize:'20px'}} onClick={div2click} >✖</p>
     <div id='logo2'>
     <RouterLink to={`/`}>
-      <img src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
+      <img  onClick={refreshHome}  src="https://i.ibb.co/1LB2hBh/Bihar-Car-Bazaar-Logo-01.png" alt="bcb" />
       </RouterLink>
     </div>
     <div id='info2'>

@@ -206,7 +206,20 @@ useEffect(()=>{
 
 
         {/* ////////////////////////////////////////////////////// */}
-        <div>
+        <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center",marginTop:'7PX'}}>
+      <h1>Booking Status:</h1>
+      <select style={{border:'1px solid black'}} onChange={e=> setProduct({...product,booked:e.target.value})} >
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+        <option value="sold">Sold</option>
+      
+      
+
+        
+      </select>
+      
+    </div>
+        {/* <div>
       <h2>Booking Status</h2>
       <div>
         <label>
@@ -233,7 +246,7 @@ useEffect(()=>{
       </div>
    
       
-    </div>
+    </div> */}
         
 
 

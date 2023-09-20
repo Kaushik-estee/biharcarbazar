@@ -35,7 +35,7 @@ function AllRoutes() {
       
       {/* <Route path="/admin" element={<Admin/>}/>  */}
       <Route path="/admin" element={<Private Component={Admin}/>}/>
-    <Route path="/add" element={<Private Component={ImageUploadForm2}/>}/> 
+    <Route path="/add" element={<Private Component={ImageUploadForm}/>}/> 
     <Route path="/admin/:id" element={<Private Component={Edit2}/>} />
     
   
