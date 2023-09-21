@@ -15,7 +15,7 @@ import { color } from 'framer-motion';
   // const IMAGE =
   //   'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
   
-  export default function ProductCard({year,id,make,price,image,onDelete}) {
+  export default function ProductCard({year,id,make,price,image,onDelete,kms}) {
  
     return (
       <Center py={12}>
@@ -68,8 +68,17 @@ import { color } from 'framer-motion';
             <Text noOfLines={3} textDecoration={'none'} color={'black'} fontSize={'sm'} textTransform={'uppercase'}>
               {year}
             </Text>
-       
+            <Text color={'black'}  > 
+              id: {id}
+              </Text>
+              <Text color={'black'}  > 
+              {make}
+              </Text>
+              <Text color={'black'}  > 
+              {kms}
+              </Text>
             <Stack direction={'row'} align={'center'}>
+          
               <Text textDecoration={'none'}  color={'white'} fontWeight={800} fontSize={'xl'}>
               &#8377; {price}
               </Text>

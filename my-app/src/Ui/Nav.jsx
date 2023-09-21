@@ -2,7 +2,7 @@
 import React from 'react'
 import './Components/Nav1.css'; // Import your CSS styles
 import { GiHamburgerMenu } from 'react-icons/gi';
-import {Link as RouterLink} from "react-router-dom"
+import {Link as RouterLink, useNavigate} from "react-router-dom"
 function div1click(){
 document.getElementById('div2').style.display='block'
 document.getElementById('div1').style.display='none'
@@ -12,11 +12,15 @@ function div2click(){
   document.getElementById('div1').style.display='flex'
   document.getElementById('div2').style.display='none'
   }
-  const refreshHome=()=>{
-    window.location.reload()
-  }
+
 
 const Nav = () => {
+  const navigate = useNavigate()
+  const refreshHome=()=>{
+    navigate('/')
+    window.location.reload()
+   
+  }
   return (
  <div style={{display:'flex',justifyContent:'space-around',position:'fixed',zIndex:'1000',width:'100%'}} >
   <div  id='div1' >

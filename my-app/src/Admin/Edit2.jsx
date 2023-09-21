@@ -4,6 +4,7 @@ import React,{useState,useEffect} from 'react'
 import {useNavigate, useParams} from "react-router-dom"
 import Adminnav from '../Ui/Components/Adminnav'
 import Footer from '../Ui/Components/Footer'
+import { toast, ToastContainer } from 'react-toastify';
 const Edit2 = () => {
     const {id} = useParams()
     const [product,setProduct] = useState({})
@@ -28,7 +29,9 @@ useEffect(()=>{
         axios
         .put(`https://car-back-qqz1.onrender.com/cars/${id}`,product)
         .then(({data})=>{
+          toast.success('EDITED successfully');
             navigate('/admin')
+           
         })
         .catch((err)=>console.log(err))
     
@@ -255,6 +258,7 @@ useEffect(()=>{
         {/* ...other form elements */}
       </form>
       </div>
+      < ToastContainer/>
       <Footer/>
     </div>
   )

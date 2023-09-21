@@ -31,13 +31,14 @@ const Contact = () => {
       </div>
       
     </div>
+    {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.387131184266!2d85.3558288753837!3d26.05360159648191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed13f911ad4ab3%3A0x1431e7ce6cf4557c!2sTata%20Motors%20Cars%20Showroom%20-%20Ideal%2C%20Sakri%20Saraiya!5e0!3m2!1sen!2sin!4v1695273748969!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
       <div id='comm' >
     <div id='map' >
     <iframe
             title="Embedded Map"
            
             
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.107272326881!2d85.99208397538777!3d26.19318849064123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edc947ea09a837%3A0x5630a0a008ab2d1c!2sEstee%20Dealers%20Pvt%20Ltd-%20Tata%20Motors%20Dealership%2C%20Darbhanga!5e0!3m2!1sen!2sin!4v1693897444633!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.387131184266!2d85.3558288753837!3d26.05360159648191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed13f911ad4ab3%3A0x1431e7ce6cf4557c!2sTata%20Motors%20Cars%20Showroom%20-%20Ideal%2C%20Sakri%20Saraiya!5e0!3m2!1sen!2sin!4v1695273748969!5m2!1sen!2sin"
             allowFullScreen=""
           ></iframe>
     </div>

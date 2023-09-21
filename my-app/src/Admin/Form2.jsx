@@ -3,6 +3,7 @@ import axios from 'axios';
 import Footer from '../Ui/Components/Footer';
 import Adminnav from '../Ui/Components/Adminnav';
 import { useNavigate } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
 
 {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/KhRSXnV/show-Roomadress.png" alt="show-Roomadress" border="0"></a> */}
 {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/2FyTbsQ/contact.png" alt="contact" border="0"></a> */}
@@ -53,6 +54,7 @@ const uploadImageToImgBB = async (image) => {
     try {
       const response = await axios.post('https://car-back-qqz1.onrender.com/cars', data);
       console.log('API Response:', response.data);
+      toast.success('Added successfully');
     } catch (error) {
       console.error('API Error:', error);
       console.log(data);
@@ -391,6 +393,7 @@ const uploadImageToImgBB = async (image) => {
       </form>
       
       </div>
+      <ToastContainer/>
       <Footer/>
       </>
     );
