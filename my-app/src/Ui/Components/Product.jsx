@@ -30,9 +30,10 @@ const [make,setMake] = useState('')
 const fetchData = () => {
     axios.get(`https://car-back-qqz1.onrender.com/cars?_page=${page}&_limit=9`)
       .then(response => {
+        setTotal(data.length)
         setData(response.data);
         setIsLoading(false);
-        setTotal(data.length)
+        
         
       })
       .catch(error => {
@@ -111,6 +112,7 @@ const applyFilter=async()=>{
      if(data.length===0){
       alert('no data found please fill data again')
     }else{
+      setTotal(data.length)
       setData(data);
       setIsLoading(false);
      console.log(year.lte,year.gte,price.lte,price.gte,kms.gte,kms.lte,make);
@@ -135,7 +137,7 @@ const applyFilter=async()=>{
   
 <div id="header" style={{display:'flex',justifyContent:'space-between',width:'90%',height:"250px"}}  >
   <div id="totalres" style={{width:'25%'}}>
-  <h1 style={{marginTop:'175px',marginLeft:'25px',color:'#27005D',fontWeight:"bold",fontSize:'1.4rem'}}>TOTAL 20 RESULTS FOUND</h1>
+  <h1 style={{marginTop:'175px',marginLeft:'25px',color:'#27005D',fontWeight:"bold",fontSize:'1.4rem'}}>TOTAL {total} RESULTS FOUND</h1>
   </div>
                      
                 <div id="filter" >

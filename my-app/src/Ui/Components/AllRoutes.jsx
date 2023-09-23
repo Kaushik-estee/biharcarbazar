@@ -9,7 +9,7 @@ import Edit from "../../Admin/Edit";
 import Home from "../Home";
 import About from "../../pages/About";
 import Contact from "../../pages/Contact";
-import ProductDetails from "./Productdetails";
+import ProductDetails from "./Productdetails2";
 import Login from "../../pages/Login";
 import ImageUploadForm from "../../Admin/Form2";
 import Private from "./PrivateRoute";
