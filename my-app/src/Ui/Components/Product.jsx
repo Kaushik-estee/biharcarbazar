@@ -17,7 +17,7 @@ const [asortdata,setAsortdata]= useState([])
 const [dsortdata,setDsortdata]= useState([])
 const [isLoading, setIsLoading] = useState(true);
 const [isPopupOpen, setIsPopupOpen] = useState(false);
-const[total,setTotal]=useState(1)
+const[total,setTotal]=useState(0)
 const [page, setPage] = useState(1);
 const[price,setPrice] = useState({lte:100000000,gte:0})
 const [year,setYear] =useState({lte:2023,gte:2000})
@@ -27,10 +27,25 @@ const [make,setMake] = useState('')
 
 // https://car-back-qqz1.onrender.com/cars?_page=1&_limit=9&price_gte=1000000&price_lte=2000000&kms_gte=20000&kms_lte=40000&year_gte=2010&year_lte=2013
 
+
+const fetchData2 = () => {
+  axios.get(`https://car-back-qqz1.onrender.com/cars`)
+    .then(response => {
+      setTotal(response.data.length)
+     
+      console.log(total);
+      
+    })
+    .catch(error => {
+      console.error('Fetching data failed:', error);
+    });
+};
+
+
 const fetchData = () => {
     axios.get(`https://car-back-qqz1.onrender.com/cars?_page=${page}&_limit=9`)
       .then(response => {
-        setTotal(data.length)
+        
         setData(response.data);
         setIsLoading(false);
         
@@ -74,6 +89,7 @@ const  All=async(page)=>{
 
 
 useEffect(() => {
+  fetchData2()
     fetchData(); // Fetch initial data
   }, [page]);
   function HandleChange(e){
@@ -349,7 +365,7 @@ const applyFilter=async()=>{
             </div>
             
             <div id="hr" style={{width:"90%",margin:"auto",height:"30px"}}>
-                <hr/>
+                <hr/> 
                 </div>
             <div style={{width:'90%'}}>
               {isLoading ? (
