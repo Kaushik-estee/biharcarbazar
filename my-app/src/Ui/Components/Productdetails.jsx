@@ -18,19 +18,33 @@ import PhoneCallButton2 from './Callbutton';
     const [product,setProduct] = useState({})
     const [isLoading, setIsLoading] = useState(true);
     const {id} = useParams()
+    const fetchData = () => {
+      axios.get(`https://car-back-qqz1.onrender.com/cars/${id}`)
+        .then(response => {
+          
+          setProduct(response.data);
+          setIsLoading(false);
+          
+          
+        })
+        .catch(error => {
+          console.error('Fetching data failed:', error);
+        });
+    };
   
 
 useEffect(()=>{
-    axios
-    .get(`https://car-back-qqz1.onrender.com/cars/${id}`)
-    .then(({data})=>{
-        // setProduct(data[0])
-        // console.log("data",data[0]);
-        setProduct(data)
-        setIsLoading(false);
-        console.log(product);
-    })
-    .catch((err)=>console.log(err))
+  fetchData()
+    // axios
+    // .get(`https://car-back-qqz1.onrender.com/cars/${id}`)
+    // .then(({data})=>{
+    //     // setProduct(data[0])
+    //     // console.log("data",data[0]);
+    //     setProduct(data)
+    //     setIsLoading(false);
+    //     console.log(product);
+    // })
+    // .catch((err)=>console.log(err))
 },[id])
 const {year,kms,make,price,model,transmission,exteriorcolor,fuel}=product
 

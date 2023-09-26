@@ -27,7 +27,7 @@ import ProductCard from './Productcard';
   
 
 useEffect(()=>{
-  fetchdata2()
+  
     axios
     .get(`https://car-back-qqz1.onrender.com/cars/${id}`)
     .then(({data})=>{
@@ -36,7 +36,7 @@ useEffect(()=>{
         setProduct(data)
         setIsLoading(false);
         console.log(product);
-        setRelative({gte:data.price+1,lte:4*data.price})
+        setRelative({gte:data.price-100000,lte:10000+data.price})
     })
     .catch((err)=>console.log(err))
     
@@ -48,10 +48,16 @@ useEffect(()=>{
     axios.get(`https://car-back-qqz1.onrender.com/cars?price_gte=${relative.gte}&price_lte=${relative.lte}`)
   .then(function (response) {
     // Handle the successful response here
+    if(response.data.length===1){
+      
+      document.getElementById('showRelative').textContent= 'No Product To show'
+    }else{
+      setRelproduct(response.data)
+      setIsLoading(false)
+      console.log(relproduct.length);
+    }
     
-    setRelproduct(response.data)
-    setIsLoading(false)
-    console.log(relproduct.length);
+   
   })
   .catch(function (error) {
     // Handle any errors here
@@ -190,11 +196,11 @@ const images = [
 
    </div>
    <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-    <button  style={{background:'orange',color:"white",margin:'auto',width:"180px",height:'50px',borderRadius:"8px"}} onClick={fetchdata2}>SHOW RELATIVE PRODUCTS</button>
+    <button id='showRelative' style={{background:'orange',color:"white",margin:'auto',width:"180px",height:'50px',borderRadius:"8px",marginBottom:'5px'}} onClick={fetchdata2}>SHOW RELATIVE PRODUCTS</button>
    
    </div>
    <div>
-   <div style={{width:'90%'}}>
+   <div style={{width:'90%',margin:'auto'}}>
               {isLoading ? (
 <Loading/>
               ):(<Grid  templateColumns={['repeat(1, 1fr)','repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)','repeat(3, 1fr)']} gap={6}> 
