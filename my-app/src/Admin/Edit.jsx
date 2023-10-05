@@ -13,7 +13,7 @@ const Edit = () => {
     console.log(id)
 useEffect(()=>{
     axios
-    .get(`https://car-back-qqz1.onrender.com/cars/${id}`)
+    .get(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`)
     .then(({data})=>{
         setProduct(data)
         console.log(product);
@@ -26,7 +26,7 @@ useEffect(()=>{
      
         event.preventDefault();
         axios
-        .put(`https://car-back-qqz1.onrender.com/cars/${id}`,product)
+        .put(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`,product)
         .then(({data})=>{
             navigate('/admin')
         })

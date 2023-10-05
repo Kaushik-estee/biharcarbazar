@@ -14,7 +14,7 @@ const Edit2 = () => {
     console.log(id)
 useEffect(()=>{
     axios
-    .get(`https://car-back-qqz1.onrender.com/cars/${id}`)
+    .get(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`)
     .then(({data})=>{
         setProduct(data)
         console.log(product);
@@ -27,7 +27,7 @@ useEffect(()=>{
      
         event.preventDefault();
         axios
-        .put(`https://car-back-qqz1.onrender.com/cars/${id}`,product)
+        .put(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`,product)
         .then(({data})=>{
           toast.success('EDITED successfully');
             navigate('/admin')
@@ -186,26 +186,8 @@ useEffect(()=>{
          name="image6" placeholder='image6' onChange={e=> setProduct({...product,image6:e.target.value})}  />
         <br />
 
-        <label htmlFor="relativeProduct1">Relative Product1:</label>
+       
         
-        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct1} type="text" id="relativeProduct1"
-         name="relativeProduct1" placeholder='relativeProduct1' onChange={e=> setProduct({...product,relativeProduct1:e.target.value})}  />
-        <br />
-        <label htmlFor="relativeProduct2">Relative Product2:</label>
-        
-        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct2} type="text" id="relativeProduct2"
-         name="relativeProduct2" placeholder='relativeProduct2' onChange={e=> setProduct({...product,relativeProduct2:e.target.value})}  />
-        <br />
-        <label htmlFor="relativeProduct3">Relative Product3:</label>
-        
-        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct3} type="text" id="relativeProduct3"
-         name="relativeProduct3" placeholder='relativeProduct3' onChange={e=> setProduct({...product,relativeProduct3:e.target.value})}  />
-        <br />
-        <label htmlFor="irelativeProduct4">Relative Product4:</label>
-        
-        <input style={{border:"1px solid black",margin:'10px'}}  value={product.relativeProduct4} type="text" id="relativeProduct4"
-         name="relativeProduct4" placeholder='relativeProduct4' onChange={e=> setProduct({...product,relativeProduct4:e.target.value})}  />
-        <br />
 
 
         {/* ////////////////////////////////////////////////////// */}

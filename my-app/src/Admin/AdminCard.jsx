@@ -68,7 +68,7 @@ import { color } from 'framer-motion';
             <Text noOfLines={3} textDecoration={'none'} color={'black'} fontSize={'sm'} textTransform={'uppercase'}>
               {year}
             </Text>
-            <Text color={'black'}  > 
+            <Text color={'white'}  > 
               id: {id}
               </Text>
               <Text color={'black'}  > 

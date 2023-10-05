@@ -61,7 +61,7 @@ function Form() {
     event.preventDefault();
 
     try {
-      const response = await axios.post('https://car-back-qqz1.onrender.com/cars', obj);
+      const response = await axios.post('https://vast-pear-nightingale-sari.cyclic.app/cars', obj);
       console.log('Response:', response.data);
       // You can handle the response data as needed
       navigateToAdmin()

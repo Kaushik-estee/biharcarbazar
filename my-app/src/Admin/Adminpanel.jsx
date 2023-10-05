@@ -6,16 +6,19 @@ import ProductCard from "./AdminCard"
 import Footer from "../Ui/Components/Footer"
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useParams } from "react-router"
 const Product=()=>{
 const [data,setData] = useState([])
 const [asortdata,setAsortdata]= useState([])
 const [dsortdata,setDsortdata]= useState([])
+const{_id}=useParams()
+console.log("params",_id);
 
 const fetchData = () => {
-    axios.get('https://car-back-qqz1.onrender.com/cars')
+    axios.get('https://vast-pear-nightingale-sari.cyclic.app/cars')
       .then(response => {
-        setData(response.data);
-        console.log(data);
+        setData(response.data.cars);
+        console.log(response.data.cars);
       })
       .catch(error => {
         console.error('Fetching data failed:', error);
@@ -29,18 +32,20 @@ const fetchData = () => {
 
 
 
-const onDelete=(id)=>{
-    axios.delete(`https://car-back-qqz1.onrender.com/cars/${id}`)
+const onDelete=(_id)=>{
+    axios.delete(`https://vast-pear-nightingale-sari.cyclic.app/cars/${_id}`)
     .then(response => {
       // Handle successful response
       
       console.log('Delete successful:', response.data);
+      console.log(_id);
      // Notify parent component of successful deletion
      fetchData();
      toast.success('Deleted successfully');
     })
     .catch(error => {
       // Handle error
+      console.log(_id);
       console.error('Delete failed:', error);
       fetchData();
     });
@@ -102,12 +107,12 @@ All()
 {
     data?.length>0 && data.map((e)=>{
 return (
-<GridItem key={e.id} >
+<GridItem key={e._id} >
     {/* mapping in card */}
 <ProductCard
 
 image={e.image}
-id={e.id}
+id={e._id}
 year={e.year}
 price={e.price}
 

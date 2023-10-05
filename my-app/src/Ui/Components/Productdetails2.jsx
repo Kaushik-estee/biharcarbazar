@@ -23,19 +23,21 @@ import ProductCard from './Productcard';
 
     var pp = product.price
     var pp2 = 6*pp
-    const {id} = useParams()
+    const {id}  = useParams()
   
-
+    
+console.log("id",id);
 useEffect(()=>{
   
     axios
-    .get(`https://car-back-qqz1.onrender.com/cars/${id}`)
+    .get(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`)
+   
     .then(({data})=>{
-        // setProduct(data[0])
-        // console.log("data",data[0]);
+        setProduct(data[0])
+        console.log("data",data[0]);
         setProduct(data)
         setIsLoading(false);
-        console.log(product);
+        console.log(id);
         setRelative({gte:data.price-100000,lte:10000+data.price})
     })
     .catch((err)=>console.log(err))
@@ -45,7 +47,7 @@ useEffect(()=>{
 
   const fetchdata2=()=>{
 
-    axios.get(`https://car-back-qqz1.onrender.com/cars?price_gte=${relative.gte}&price_lte=${relative.lte}`)
+    axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?price_gte=${relative.gte}&price_lte=${relative.lte}`)
   .then(function (response) {
     // Handle the successful response here
     if(response.data.length===1){

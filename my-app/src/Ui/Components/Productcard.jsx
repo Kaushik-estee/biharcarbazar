@@ -86,7 +86,7 @@ import "./ProductCard.css"
           <RouterLink to={`/${id}`}>
        
           <Heading   color={'#27005D'}  marginTop={'25px'} fontSize={"x-large"} > 
-              {year} {make} {model} {fuel}
+              {year} {make} {model} {fuel} 
 
               </Heading>
               </RouterLink>

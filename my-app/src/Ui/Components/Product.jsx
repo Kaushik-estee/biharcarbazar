@@ -25,15 +25,15 @@ const [kms,setKms] =useState({lte:300000,gte:0})
 const [make,setMake] = useState('')
 
 
-// https://car-back-qqz1.onrender.com/cars?_page=1&_limit=9&price_gte=1000000&price_lte=2000000&kms_gte=20000&kms_lte=40000&year_gte=2010&year_lte=2013
+// https://cute-ant-earrings.cyclic.app/cars?_page=1&_limit=9&price_gte=1000000&price_lte=2000000&kms_gte=20000&kms_lte=40000&year_gte=2010&year_lte=2013
 
 
 const fetchData2 = () => {
-  axios.get(`https://car-back-qqz1.onrender.com/cars`)
+  axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars`)
     .then(response => {
-      setTotal(response.data.length)
+      setTotal(response.data.totalCars)
      
-      console.log(total);
+      console.log("data",response.data.cars[0]._id);
       
     })
     .catch(error => {
@@ -43,12 +43,12 @@ const fetchData2 = () => {
 
 
 const fetchData = () => {
-    axios.get(`https://car-back-qqz1.onrender.com/cars?_page=${page}&_limit=9`)
+    axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=9`)
       .then(response => {
         
-        setData(response.data);
+        setData(response.data.cars);
         setIsLoading(false);
-        
+        console.log("rd",response.data);
         
       })
       .catch(error => {
@@ -64,25 +64,25 @@ const fetchData = () => {
 const  DescData=async(page)=>{
                
   let res = 
-  await fetch(`https://car-back-qqz1.onrender.com/cars?_sort=price&_order=desc&_page=${page}&_limit=9`)
+  await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=desc&page=${page}&limit=9`)
   let data = await res.json()
-  setData(data);
+  setData(data.cars);
   setIsLoading(false);
 }
 const  AscData=async(page)=>{
  
   let res = await fetch
-  (`https://car-back-qqz1.onrender.com/cars?_sort=price&_order=asc&_page=${page}&_limit=9`)
+  (`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=asc&page=${page}&limit=9`)
   let data = await res.json()
-  setData(data);
+  setData(data.cars);
   setIsLoading(false);
 }
 const  All=async(page)=>{
  
   let res = await fetch
-  (`https://car-back-qqz1.onrender.com/cars?_page=${page}&_limit=9`)
+  (`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=9`)
   let data = await res.json()
-  setData(data);
+  setData(data.cars);
   setIsLoading(false);
 }
 
@@ -119,7 +119,7 @@ const applyFilter=async()=>{
   // }
 
     let res = 
-    await fetch(`https://car-back-qqz1.onrender.com/cars?_page=${page}&_limit=9&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`)
+    await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=9&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`)
     let data = await res.json()
   
     
@@ -129,7 +129,7 @@ const applyFilter=async()=>{
       alert('no data found please fill data again')
     }else{
       setTotal(data.length)
-      setData(data);
+      setData(data.cars);
       setIsLoading(false);
      console.log(year.lte,year.gte,price.lte,price.gte,kms.gte,kms.lte,make);
      setIsPopupOpen(!isPopupOpen);
@@ -375,12 +375,12 @@ const applyFilter=async()=>{
           {
               data?.length>0 && data.map((e)=>{
           return (
-          <GridItem key={e.id} >
+          <GridItem key={e._id} >
               {/* mapping in card */}
           <ProductCard
           
           image={e.image}
-          id={e.id}
+          id={e._id}
           year={e.year}
           price={e.price}
           
@@ -423,3 +423,5 @@ export default Product
 // ✖
 
 {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/HNKgwM2/transparentfilrter-fotor-bg-remover-20230919122145.png" alt="transparentfilrter-fotor-bg-remover-20230919122145" border="0"></a> */}
+
+// render api - https://car-back-qqz1.onrender.com/cars

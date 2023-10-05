@@ -25,10 +25,7 @@ function ImageUploadForm() {
   const [image5, setImage5] = useState('https://i.ibb.co/KhRSXnV/show-Roomadress.png');
   const [image6, setImage6] = useState('https://i.ibb.co/2FyTbsQ/contact.png');
   const [booked, setBooked] = useState('no');
-  const[relativeProduct1,setRelativeProduct1] = useState(null)
-  const[relativeProduct2,setRelativeProduct2] = useState(null)
-  const[relativeProduct3,setRelativeProduct3] = useState(null)
-  const[relativeProduct4,setRelativeProduct4] = useState(null)
+ 
 
   const navigate = useNavigate();
 
@@ -52,7 +49,7 @@ const uploadImageToImgBB = async (image) => {
   // Function to send data to your API
   const sendToYourApi = async (data) => {
     try {
-      const response = await axios.post('https://car-back-qqz1.onrender.com/cars', data);
+      const response = await axios.post('https://vast-pear-nightingale-sari.cyclic.app/cars', data);
       console.log('API Response:', response.data);
       toast.success('Added successfully');
     } catch (error) {
@@ -118,18 +115,7 @@ const uploadImageToImgBB = async (image) => {
       const handleOptionChangeTransmission = (event)=>{
         setTransmission(event.target.value)
       }
-      const handlerelativeProduct1 = (e)=>{
-        setRelativeProduct1(e.target.value)
-      }
-      const handlerelativeProduct2 = (e)=>{
-        setRelativeProduct2(e.target.value)
-      }
-      const handlerelativeProduct3 = (e)=>{
-        setRelativeProduct3(e.target.value)
-      }
-      const handlerelativeProduct4 = (e)=>{
-        setRelativeProduct4(e.target.value)
-      }
+    
   
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -152,7 +138,7 @@ const uploadImageToImgBB = async (image) => {
 
   
       // Now, you can send the name and imgUrl to your API
-      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5,image6:imgUrl6, booked:booked,relativeProduct1:relativeProduct1,relativeProduct2:relativeProduct2,relativeProduct3:relativeProduct3,relativeProduct4:relativeProduct4});
+      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5,image6:imgUrl6, booked:booked});
       console.log(year,imgUrl,make);
       navigateToAdmin()
     };
@@ -370,22 +356,7 @@ const uploadImageToImgBB = async (image) => {
       </select>
       
     </div>
-    <div>
-          <label>relativeProduct1:</label>
-          <input type="number" value={relativeProduct1} onChange={handlerelativeProduct1} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
-        <div>
-          <label>relativeProduct2:</label>
-          <input type="number" value={relativeProduct2} onChange={handlerelativeProduct2} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
-        <div>
-          <label>relativeProduct3:</label>
-          <input type="number" value={relativeProduct3} onChange={handlerelativeProduct3} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
-        <div>
-          <label>relativeProduct4:</label>
-          <input type="number" value={relativeProduct4} onChange={handlerelativeProduct4} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
+ 
 
 
         {/* ///////////////////////////// */}

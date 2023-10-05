@@ -19,7 +19,7 @@ import PhoneCallButton2 from './Callbutton';
     const [isLoading, setIsLoading] = useState(true);
     const {id} = useParams()
     const fetchData = () => {
-      axios.get(`https://car-back-qqz1.onrender.com/cars/${id}`)
+      axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`)
         .then(response => {
           
           setProduct(response.data);

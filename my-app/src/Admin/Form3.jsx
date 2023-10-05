@@ -51,7 +51,7 @@ const uploadImageToImgBB = async (image) => {
   // Function to send data to your API
   const sendToYourApi = async (data) => {
     try {
-      const response = await axios.post('https://car-back-qqz1.onrender.com/cars', data);
+      const response = await axios.post('https://vast-pear-nightingale-sari.cyclic.app/cars', data);
       console.log('API Response:', response.data);
     } catch (error) {
       console.error('API Error:', error);
