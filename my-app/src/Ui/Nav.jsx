@@ -42,7 +42,7 @@ const Nav = () => {
       </RouterLink>
       </div> <div style={{width:'50%'}}>
       <RouterLink to={`/contact`}>
-      <p>CONTACT </p>
+      <p style={{marginLeft:"11px"}}>CONTACT </p>
       </RouterLink>
       </div>
      
@@ -64,7 +64,7 @@ const Nav = () => {
       <p>ABOUT </p>
       </RouterLink>
       <RouterLink to={`/contact`}>
-      <p>CONTACT </p>
+      <p >CONTACT </p>
       </RouterLink>
       {/* <RouterLink to={`/login`}>
       <p>Admin Login</p>
