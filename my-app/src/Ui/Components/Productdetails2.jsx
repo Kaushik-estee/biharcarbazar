@@ -86,7 +86,7 @@ const images = [
   // Add more image URLs as needed
 ];
 
-    
+const filteredImages = images.filter(image => image);
     
     
     
@@ -110,7 +110,7 @@ const images = [
     <div id='detail' width={'98%'} margin={'auto'}   >
     <div id='main' style={{minHeight:'600px'}}  >
       <div  id='prodImage' >
-      <ImageCarousel  images={images} />
+      <ImageCarousel  images={filteredImages} />
         
 {/* <Image id='prodImg'  src={product.image} alt={kms} /> */}
       </div>

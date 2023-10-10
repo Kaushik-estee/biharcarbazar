@@ -3,12 +3,13 @@ import axios from 'axios';
 import Footer from '../Ui/Components/Footer';
 import Adminnav from '../Ui/Components/Adminnav';
 import { useNavigate } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
 
 {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/KhRSXnV/show-Roomadress.png" alt="show-Roomadress" border="0"></a> */}
 {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/2FyTbsQ/contact.png" alt="contact" border="0"></a> */}
 
 
-function ImageUploadForm2() {
+function ImageUploadForm() {
     const [year, setYear] = useState('');
     const [image, setImage] = useState(null);
     const [make, setMake] = useState("");
@@ -21,13 +22,12 @@ function ImageUploadForm2() {
     const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
   const [image4, setImage4] = useState(null);
-  const [image5, setImage5] = useState('https://i.ibb.co/KhRSXnV/show-Roomadress.png');
-  const [image6, setImage6] = useState('https://i.ibb.co/2FyTbsQ/contact.png');
-  const [booked, setBooked] = useState('');
-  const[relativeProduct1,setRelativeProduct1] = useState(null)
-  const[relativeProduct2,setRelativeProduct2] = useState(null)
-  const[relativeProduct3,setRelativeProduct3] = useState(null)
-  const[relativeProduct4,setRelativeProduct4] = useState(null)
+  const [image5, setImage5] = useState(null);
+  // 
+  const [image6, setImage6] = useState(null);
+  // 
+  const [booked, setBooked] = useState('no');
+ 
 
   const navigate = useNavigate();
 
@@ -37,22 +37,28 @@ function ImageUploadForm2() {
 
 
     // Function to upload an image to ImgBB
-const uploadImageToImgBB = async (image) => {
-    const formData = new FormData();
-    formData.append('image', image);
-  
-    const response = await axios.post('https://api.imgbb.com/1/upload?key=cdb25a95f8ee90b2d292092496877275', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
-  
-    return response;
-  };
+    const uploadImageToImgBB = async (image) => {
+      if (image) {
+        const formData = new FormData();
+        formData.append('image', image);
+    
+        const response = await axios.post('https://api.imgbb.com/1/upload?key=cdb25a95f8ee90b2d292092496877275', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        });
+    
+        return response;
+      } else {
+        // Return null or handle the case where there is no image
+        return null;
+      }
+    };
   
   // Function to send data to your API
   const sendToYourApi = async (data) => {
     try {
       const response = await axios.post('https://vast-pear-nightingale-sari.cyclic.app/cars', data);
       console.log('API Response:', response.data);
+      toast.success('Added successfully');
     } catch (error) {
       console.error('API Error:', error);
       console.log(data);
@@ -116,44 +122,33 @@ const uploadImageToImgBB = async (image) => {
       const handleOptionChangeTransmission = (event)=>{
         setTransmission(event.target.value)
       }
-      const handlerelativeProduct1 = (e)=>{
-        setRelativeProduct1(e.target.value)
-      }
-      const handlerelativeProduct2 = (e)=>{
-        setRelativeProduct2(e.target.value)
-      }
-      const handlerelativeProduct3 = (e)=>{
-        setRelativeProduct3(e.target.value)
-      }
-      const handlerelativeProduct4 = (e)=>{
-        setRelativeProduct4(e.target.value)
-      }
+    
   
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      // Upload the image to ImgBB using the ImgBB API
-      const imgbbResponse = await uploadImageToImgBB(image);
-      const imgbbResponse2 = await uploadImageToImgBB(image2);
-      const imgbbResponse3 = await uploadImageToImgBB(image3);
-      const imgbbResponse4 = await uploadImageToImgBB(image4);
-      const imgbbResponse5 = await uploadImageToImgBB(image5);
-      const imgbbResponse6 = await uploadImageToImgBB(image6);
-  
-      // Extract the ImgBB URL from the response
-      const imgUrl = imgbbResponse.data.data.url;
-      const imgUrl2 = imgbbResponse2.data.data.url;
-      const imgUrl3 = imgbbResponse3.data.data.url;
-      const imgUrl4 = imgbbResponse4.data.data.url;
-      const imgUrl5 = imgbbResponse5.data.data.url;
-      const imgUrl6 = imgbbResponse6.data.data.url;
-
-  
-      // Now, you can send the name and imgUrl to your API
-      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5,image6:imgUrl6, booked:booked,relativeProduct1:relativeProduct1,relativeProduct2:relativeProduct2,relativeProduct3:relativeProduct3,relativeProduct4:relativeProduct4});
-      console.log(year,imgUrl,make);
-      navigateToAdmin()
-    };
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        // Upload the image to ImgBB using the ImgBB API
+        const imgbbResponse = await uploadImageToImgBB(image);
+        const imgbbResponse2 = await uploadImageToImgBB(image2);
+        const imgbbResponse3 = await uploadImageToImgBB(image3);
+        const imgbbResponse4 = await uploadImageToImgBB(image4);
+        const imgbbResponse5 = await uploadImageToImgBB(image5);
+        const imgbbResponse6 = await uploadImageToImgBB(image6);
+      
+        // Check if imgbbResponse is null before accessing its 'data' property
+        const imgUrl = imgbbResponse ? imgbbResponse.data.data.url : null;
+        const imgUrl2 = imgbbResponse2 ? imgbbResponse2.data.data.url : null;
+        const imgUrl3 = imgbbResponse3 ? imgbbResponse3.data.data.url : null;
+        const imgUrl4 = imgbbResponse4 ? imgbbResponse4.data.data.url : null;
+        const imgUrl5 = imgbbResponse5 ? imgbbResponse5.data.data.url : null;
+        const imgUrl6 = imgbbResponse6 ? imgbbResponse6.data.data.url : null;
+      
+        // Now, you can send the name and imgUrl to your API
+        sendToYourApi({ year: year, image: imgUrl, make: make, model: model, kms: kms, price: price, fuel: fuel, transmission: transmission, exteriorcolor: exteriorcolor, image2: imgUrl2, image3: imgUrl3, image4: imgUrl4, image5: imgUrl5, image6: imgUrl6, booked: booked });
+      
+        navigateToAdmin();
+      };
+      
   
     return (
       <>
@@ -325,7 +320,7 @@ const uploadImageToImgBB = async (image) => {
         </div>
         {/* /////////////////////////////// */}
 
-        <div>
+        {/* <div>
       <h2>Booking Status</h2>
       <div>
         <label>
@@ -354,23 +349,21 @@ const uploadImageToImgBB = async (image) => {
       </div>
    
       
+    </div> */}
+            <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center",marginTop:'7PX'}}>
+      <h1>Booking Status:</h1>
+      <select style={{border:'1px solid black'}} onChange={handleOptionChange} value={booked}>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+        <option value="sold">Sold</option>
+      
+      
+
+        
+      </select>
+      
     </div>
-    <div>
-          <label>relativeProduct1:</label>
-          <input type="number" value={relativeProduct1} onChange={handlerelativeProduct1} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
-        <div>
-          <label>relativeProduct2:</label>
-          <input type="number" value={relativeProduct2} onChange={handlerelativeProduct2} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
-        <div>
-          <label>relativeProduct3:</label>
-          <input type="number" value={relativeProduct3} onChange={handlerelativeProduct3} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
-        <div>
-          <label>relativeProduct4:</label>
-          <input type="number" value={relativeProduct4} onChange={handlerelativeProduct4} style={{border:'1px solid black',margin:'5px'}} />
-        </div>
+ 
 
 
         {/* ///////////////////////////// */}
@@ -378,10 +371,11 @@ const uploadImageToImgBB = async (image) => {
       </form>
       
       </div>
+      <ToastContainer/>
       <Footer/>
       </>
     );
   }
   
-  export default ImageUploadForm2;
+  export default ImageUploadForm;
   

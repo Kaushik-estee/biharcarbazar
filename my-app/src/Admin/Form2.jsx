@@ -23,7 +23,9 @@ function ImageUploadForm() {
   const [image3, setImage3] = useState(null);
   const [image4, setImage4] = useState(null);
   const [image5, setImage5] = useState('https://i.ibb.co/KhRSXnV/show-Roomadress.png');
+  // 
   const [image6, setImage6] = useState('https://i.ibb.co/2FyTbsQ/contact.png');
+  // 
   const [booked, setBooked] = useState('no');
  
 
