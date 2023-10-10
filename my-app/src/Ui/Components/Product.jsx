@@ -31,9 +31,9 @@ const [make,setMake] = useState('')
 const fetchData2 = () => {
   axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars`)
     .then(response => {
-      setTotal(response.data.totalCars)
+      setTotal(response.data.cars.length)
      
-      console.log("data",response.data.cars[0]._id);
+      console.log("total",response.data.totalCars);
       
     })
     .catch(error => {

@@ -3,7 +3,7 @@ import React from 'react';
 const Loading = () => {
   return (
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'100%',height:'500px',flexDirection:'column'}} className="loading">
-      <img  style={{height:'300px',width:'300px'}} src="https://i.ibb.co/wCYMbJN/3dgifmaker81070.gif" alt="Please Wait" />
+      {/* <img  style={{height:'300px',width:'300px'}} src="https://i.ibb.co/wCYMbJN/3dgifmaker81070.gif" alt="Please Wait" /> */}
       <img style={{height:'60px',width:'60px'}} src="https://i.ibb.co/MgHdSKC/please-wait.gif" alt="Please Wait" />
     </div>
   );

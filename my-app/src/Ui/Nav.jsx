@@ -35,13 +35,16 @@ const Nav = () => {
     </div>
   
     <div id='info' style={{width:'18%'}}>
+      <div style={{borderRight:'1px solid #27005D',width:'50%'}}>
     <RouterLink to={`/about`}>
+      
       <p id='infoAbout'>ABOUT </p>
       </RouterLink>
+      </div> <div style={{width:'50%'}}>
       <RouterLink to={`/contact`}>
       <p>CONTACT </p>
       </RouterLink>
-     
+      </div>
      
     </div>
 

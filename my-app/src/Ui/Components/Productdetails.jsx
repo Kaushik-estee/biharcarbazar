@@ -142,10 +142,10 @@ const images = [
               </Text>
               </div>
         <div style={{justifyContent:'space-around'}}>
-          <div id='numshown'>
+          {/* <div id='numshown'>
             <h1 style={{fontWeight:'600',color:'#27005D'}}>Call Now : 9297777103</h1>
           </div >
-          <div id='call2'> <PhoneCallButton2/></div>
+          <div id='call2'> <PhoneCallButton2/></div> */}
        
         
          

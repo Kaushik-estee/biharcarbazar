@@ -200,15 +200,15 @@
         font-weight: 500;
     }
 
-    #infoAbout::after {
+    /* #infoAbout::after {
         content: '';
         position: absolute;
         top: 0;
         right: 0;
-        width: 2px; /* Adjust the width of the vertical line as needed */
+        width: 1px; 
         height: 90%;
-        background-color: #27005D; /* Set the color of the line */
-      }
+        background-color: #27005D; 
+      } */
 
     #logo img{
         height: 70%;

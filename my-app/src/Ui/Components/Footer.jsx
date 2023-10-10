@@ -7,7 +7,7 @@ const Footer = () => {
   return (
   <  div style={{width:'100%'}}>
     
-    <div style={{width:'99%',height:'65px',margin:'auto',display:'flex',backgroundColor:'#EDF0F9',justifyContent:'flex-end'}}>
+    <div style={{width:'99%',height:'35px',margin:'auto',display:'flex',backgroundColor:'#EDF0F9',justifyContent:'flex-end'}}>
     <RouterLink to={`/admin`}>
       <p style={{color:'#00008B',marginTop:'20px',marginRight:'70px',fontWeight:'500'}}>ADMIN </p>
               </RouterLink>

@@ -100,25 +100,38 @@ import "./ProductCard.css"
             
               <div style={{display:'flex',width:'100%',justifyContent:'space-around'}}>
               
-            <div style={{width:'30%',margin:"11px",borderRight:'1px solid #D4C5C7',textAlign:'center'}} >
+            <div style={{width:'30%',margin:"11px",textAlign:'center',display: 'flex',borderRight:'1px solid #D4C5C7',
+  flexDirection: 'column',
+  justifyContent: 'center', // Center content vertically
+  alignItems: 'center',
+  marginBottom:'20px'}} >
              {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" /> */}
-             <h6 id='regYear' style={{color:'#A39BA8',fontWeight:'bold'}}>FUEL TYPE</h6>
-            <Text marginTop={'2px'}  textDecoration={'none'} color={'#27005D'} fontSize={'sm'} fontWeight={'500'} marginBottom={'20px'} >
+             <h6 id='regYear' style={{color:'#A39BA8',fontWeight:'bold',marginTop:"7px"}}>FUEL TYPE</h6>
+            <Text marginTop={'2px'}  textDecoration={'none'} color={'#27005D'} fontSize={'sm'} fontWeight={'500'}>
               {fuel} 
             </Text>
             </div>
               
-              <div style={{width:'30%',margin:"10px",borderRight:'1px solid #D4C5C7',textAlign:'center'}}>
-              {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" /> */}
-              <h6 id='km' style={{color:'#A39BA8',fontWeight:'bold'}}>KM</h6>
-              <Text  color={'#27005D'} fontWeight={'500'} fontSize={'sm'}  marginBottom={'20px'} > 
+              <div style={{width:'30%',margin:"10px",textAlign:'center',borderRight:'1px solid #D4C5C7',display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center', // Center content vertically
+  alignItems: 'center',
+  marginBottom:'20px'}}>
+           <div>
+              <h6 id='km' style={{color:'#A39BA8',fontWeight:'bold',marginTop:"7px"}}>KM</h6>
+              <Text  color={'#27005D'} fontWeight={'500'} fontSize={'sm'}   > 
               {kms}
               </Text>
               </div>
-              <div style={{width:'30%',margin:"10px",textAlign:'center'}}>
+              </div>
+              <div style={{width:'30%',margin:"10px",textAlign:'center',display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center', // Center content vertically
+  alignItems: 'center',
+  marginBottom:'20px'}}>
               {/* <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/kms-done.png" alt="" /> */}
-              <h6 style={{color:'#A39BA8',fontWeight:"bold"}}>TRANSMISSION</h6>
-              <Text  color={'#27005D'} fontWeight={'500'} fontSize={'sm'} marginBottom={'20px'}   > 
+              <h6 style={{color:'#A39BA8',fontWeight:"bold",marginTop:"7px"}}>TRANSMISSION</h6>
+              <Text  color={'#27005D'} fontWeight={'500'} fontSize={'sm'}  > 
               {transmission}
               </Text>
               </div>
