@@ -53,7 +53,7 @@ useEffect(() => {
 
     fetchData();
 }, [id]);
-
+console.log("relpro",relproduct.length);
 
 const fetchdata2 = async (newRelative) => {
     try {
@@ -199,8 +199,9 @@ const filteredImages = images.filter(image => image);
 
    </div>
    <div style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-    {/* <button id='showRelative' style={{background:'orange',color:"white",margin:'auto',width:"180px",height:'50px',borderRadius:"8px",marginBottom:'5px'}} onClick={fetchdata2}>SHOW RELATIVE PRODUCTS</button>
-    */}
+    {relproduct.length>1?( <button id='showRelative' style={{background:'#27005D',color:"white",margin:'auto',width:"90%",height:'50px',borderRadius:"8px",marginBottom:'5px'}} >You may also like</button>):null}
+  
+   
    </div>
    <div>
    <div style={{width:'90%',margin:'auto'}}>
