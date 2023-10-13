@@ -22,9 +22,9 @@ function ImageUploadForm() {
     const [image2, setImage2] = useState(null);
   const [image3, setImage3] = useState(null);
   const [image4, setImage4] = useState(null);
-  const [image5, setImage5] = useState('https://i.ibb.co/KhRSXnV/show-Roomadress.png');
+  const [image5, setImage5] = useState(null);
   // 
-  const [image6, setImage6] = useState('https://i.ibb.co/2FyTbsQ/contact.png');
+  const [image6, setImage6] = useState(null);
   // 
   const [booked, setBooked] = useState('no');
  
@@ -37,16 +37,21 @@ function ImageUploadForm() {
 
 
     // Function to upload an image to ImgBB
-const uploadImageToImgBB = async (image) => {
-    const formData = new FormData();
-    formData.append('image', image);
-  
-    const response = await axios.post('https://api.imgbb.com/1/upload?key=cdb25a95f8ee90b2d292092496877275', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
-  
-    return response;
-  };
+    const uploadImageToImgBB = async (image) => {
+      if (image) {
+        const formData = new FormData();
+        formData.append('image', image);
+    
+        const response = await axios.post('https://api.imgbb.com/1/upload?key=cdb25a95f8ee90b2d292092496877275', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        });
+    
+        return response;
+      } else {
+        // Return null or handle the case where there is no image
+        return null;
+      }
+    };
   
   // Function to send data to your API
   const sendToYourApi = async (data) => {
@@ -119,31 +124,31 @@ const uploadImageToImgBB = async (image) => {
       }
     
   
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      // Upload the image to ImgBB using the ImgBB API
-      const imgbbResponse = await uploadImageToImgBB(image);
-      const imgbbResponse2 = await uploadImageToImgBB(image2);
-      const imgbbResponse3 = await uploadImageToImgBB(image3);
-      const imgbbResponse4 = await uploadImageToImgBB(image4);
-      const imgbbResponse5 = await uploadImageToImgBB(image5);
-      const imgbbResponse6 = await uploadImageToImgBB(image6);
-  
-      // Extract the ImgBB URL from the response
-      const imgUrl = imgbbResponse.data.data.url;
-      const imgUrl2 = imgbbResponse2.data.data.url;
-      const imgUrl3 = imgbbResponse3.data.data.url;
-      const imgUrl4 = imgbbResponse4.data.data.url;
-      const imgUrl5 = imgbbResponse5.data.data.url;
-      const imgUrl6 = imgbbResponse6.data.data.url;
-
-  
-      // Now, you can send the name and imgUrl to your API
-      sendToYourApi({ year:year, image:imgUrl ,make:make, model:model, kms:kms, price:price, fuel:fuel, transmission:transmission,exteriorcolor:exteriorcolor,image2:imgUrl2,image3:imgUrl3,image4:imgUrl4,image5:imgUrl5,image6:imgUrl6, booked:booked});
-      console.log(year,imgUrl,make);
-      navigateToAdmin()
-    };
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        // Upload the image to ImgBB using the ImgBB API
+        const imgbbResponse = await uploadImageToImgBB(image);
+        const imgbbResponse2 = await uploadImageToImgBB(image2);
+        const imgbbResponse3 = await uploadImageToImgBB(image3);
+        const imgbbResponse4 = await uploadImageToImgBB(image4);
+        const imgbbResponse5 = await uploadImageToImgBB(image5);
+        const imgbbResponse6 = await uploadImageToImgBB(image6);
+      
+        // Check if imgbbResponse is null before accessing its 'data' property
+        const imgUrl = imgbbResponse ? imgbbResponse.data.data.url : null;
+        const imgUrl2 = imgbbResponse2 ? imgbbResponse2.data.data.url : null;
+        const imgUrl3 = imgbbResponse3 ? imgbbResponse3.data.data.url : null;
+        const imgUrl4 = imgbbResponse4 ? imgbbResponse4.data.data.url : null;
+        const imgUrl5 = imgbbResponse5 ? imgbbResponse5.data.data.url : null;
+        const imgUrl6 = imgbbResponse6 ? imgbbResponse6.data.data.url : null;
+      
+        // Now, you can send the name and imgUrl to your API
+        sendToYourApi({ year: year, image: imgUrl, make: make, model: model, kms: kms, price: price, fuel: fuel, transmission: transmission, exteriorcolor: exteriorcolor, image2: imgUrl2, image3: imgUrl3, image4: imgUrl4, image5: imgUrl5, image6: imgUrl6, booked: booked });
+      
+        navigateToAdmin();
+      };
+      
   
     return (
       <>
@@ -198,6 +203,7 @@ const uploadImageToImgBB = async (image) => {
             <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center",marginTop:'7PX'}}>
       <h1>Select Make:</h1>
       <select style={{border:'1px solid black'}} onChange={handleMakeChange } value={make}>
+      <option value="">Select</option>
         <option value="TATA">TATA</option>
         <option value="MAHINDRA">MAHINDRA</option>
         <option value="AUDI">AUDI</option>
@@ -270,6 +276,7 @@ const uploadImageToImgBB = async (image) => {
      <div style={{display:"flex",margin:"auto",justifyContent:"center",textAlign:"center",alignItems:"center"}}>
       <h1>Fuel Type:</h1>
       <select style={{border:'1px solid black'}} onChange={handleFuelChange } value={fuel}>
+      <option value="">Select</option>
         <option value="PETROL">PETROL</option>
         <option value="DIESEL">DIESEL</option>
         <option value="CNG">CNG</option>

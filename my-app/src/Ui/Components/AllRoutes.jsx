@@ -11,7 +11,7 @@ import About from "../../pages/About";
 import Contact from "../../pages/Contact";
 import ProductDetails from "./Productdetails4";
 import Login from "../../pages/Login";
-import ImageUploadForm from "../../Admin/Form3";
+import ImageUploadForm from "../../Admin/Form2";
 import Private from "./PrivateRoute";
 import ImageUploadForm2 from "../../Admin/Form3";
 import Edit2 from "../../Admin/Edit2";
