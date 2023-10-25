@@ -31,6 +31,8 @@ import "./ProductCard.css"
           p={4}
           maxW={'450px'}
           w={'full'}
+          
+          
           bg={useColorModeValue('white', 'gray.800')}
           // boxShadow={'2xl'}
          
@@ -46,6 +48,7 @@ import "./ProductCard.css"
             backgroundColor={'#EDF0F9'}
             pos={'relative'}
             height={'230px'}
+            
           
             _groupHover={{
               _after: {
@@ -80,7 +83,7 @@ import "./ProductCard.css"
           
           </Box>
           </RouterLink>
-          <div style={{background:"#EDF0F9",borderBottomLeftRadius:"8px",borderBottomRightRadius:"8px"}} >
+          <div style={{background:"#EDF0F9",borderBottomLeftRadius:"8px",borderBottomRightRadius:"8px",height:'250px'}} >
           <Stack >
           <div style={{background:"#EDF0F9",width:"90%",margin:"auto"}}>
           <RouterLink to={`/${id}`}>

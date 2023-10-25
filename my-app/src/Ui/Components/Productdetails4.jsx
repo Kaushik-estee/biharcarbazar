@@ -9,11 +9,12 @@ import './Productdetails.css'
   import {useParams} from "react-router-dom"
 import Footer from './Footer';
 import Nav from '../Nav';
-import ImageCarousel from './Image';
+// import ImageCarousel from './Image';
 import Loading from './Loading';
 import PhoneCallButton from './Call';
 import PhoneCallButton2 from './Callbutton';
 import ProductCard from './Productcard2';
+import ImageCarousel from './Carousel';
 
   export default function ProductDetails() {
     const [product,setProduct] = useState({})

@@ -36,6 +36,8 @@ import "./ProductCard.css"
           role={'group'}
           p={4}
           maxW={'450px'}
+          h={"400px"}
+         
           w={'full'}
           bg={useColorModeValue('white', 'gray.800')}
           // boxShadow={'2xl'}
