@@ -43,7 +43,7 @@ const fetchData2 = () => {
 
 
 const fetchData = () => {
-    axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=9`)
+    axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=27`)
       .then(response => {
         
         setData(response.data.cars);
