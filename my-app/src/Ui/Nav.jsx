@@ -31,7 +31,7 @@ const Nav = () => {
     </div>
     <div id='blank' style={{width:"12%"}}></div>
     <div style={{display:'flex',justifyContent:'center',alignItems:'center',width:'30%'}} id='call'>
-      <h1 id='num'>TO BUY/SELL CALL ON : 9297777103</h1>
+      <h1 id='num'>TO BUY/SELL CALL ON : 9031662367</h1>
     </div>
   
     <div id='info' style={{width:'18%'}}>

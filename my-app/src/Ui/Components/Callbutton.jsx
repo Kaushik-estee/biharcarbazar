@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiPhoneCall } from 'react-icons/bi';
 function PhoneCallButton2() {
-  const phoneNumber = '9297777103'; // Replace with the desired phone number
+  const phoneNumber = '9031662367'; // Replace with the desired phone number
 
   const handleCallClick = (event) => {
     

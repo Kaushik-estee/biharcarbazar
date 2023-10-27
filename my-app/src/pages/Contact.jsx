@@ -19,7 +19,7 @@ const Contact = () => {
         <div style={{display:'flex'}}>
           <h1 style={{marginTop:'4px',marginRight:'10px',fontSize:'50px',color:'green'}}><FiPhoneCall/></h1>
 
-        <h1 style={{marginTop:'12px',fontWeight:'bolder',fontSize:'24px',color:'gray',marginLeft:'16px'}}>9297777103</h1></div>
+        <h1 style={{marginTop:'12px',fontWeight:'bolder',fontSize:'24px',color:'gray',marginLeft:'16px'}}>9031662367</h1></div>
        
       </div>
       

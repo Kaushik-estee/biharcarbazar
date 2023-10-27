@@ -10,7 +10,7 @@ const WhatsAppButton = () => {
   // const whatsappURL = `https://wa.me/${phoneNumber}`;
   const handleWhatsAppClick = (event) => {
    
-    const phoneNumber = '+919297777103'; // Replace with the recipient's phone number
+    const phoneNumber = '+919031662367'; // Replace with the recipient's phone number
     const whatsappURL = `https://wa.me/${phoneNumber}`;
 
     window.open(whatsappURL, '_blank');

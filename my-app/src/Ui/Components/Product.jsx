@@ -347,6 +347,7 @@ const applyFilter=async()=>{
         <option value="HONDA">HONDA</option>
         <option value="HYUNDAI">HYUNDAI</option>
         <option value="FORD">FORD</option>
+        <option value="FIAT">FIAT</option>
         <option value="TOYOTA">TOYOTA</option>
         <option value="MARUTI SUZUKI">MARUTI SUZUKI</option>
         <option value="HONDA">HONDA</option>
