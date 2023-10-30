@@ -73,6 +73,12 @@ h6{
     #callIcons{
         display: none;
     }
+    #calIcon{
+      display: none;
+    }
+    #whatsappIcon{
+      display: none;
+    }
 
     /* #regYear{
       position: relative;

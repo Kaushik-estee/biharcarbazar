@@ -2,7 +2,7 @@ import axios from "axios"
 import {  Grid,
     GridItem} from "@chakra-ui/react"
 import {useEffect,useState} from "react"
-import ProductCard from "./Productcard"
+import ProductCard from "./Productcard3"
 import Footer from "./Footer"
 import Loading from "./Loading"
 import Pagination from "./Pagination"

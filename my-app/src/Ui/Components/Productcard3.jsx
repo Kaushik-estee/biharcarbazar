@@ -16,26 +16,23 @@ import WhatsAppButton from './Whatsapp';
 import PhoneCallButton from './Call';
 import "./ProductCard.css"
   
- 
+  // const IMAGE =
+  //   'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+  
   export default function ProductCard({year,id,make,price,image,model,kms,transmission,exteriorcolor,fuel,booked}) {
-    const handleCardClick = () => {
-        
-      
-      window.location.href = `/${id}`;
-      };
+ 
     return (
       <Center py={12}>
         
    
         <Box
-        onClick={handleCardClick}
         roundedBottom={'xl'}
           role={'group'}
           p={4}
           maxW={'450px'}
-          h={"400px"}
-         
           w={'full'}
+          
+          
           bg={useColorModeValue('white', 'gray.800')}
           // boxShadow={'2xl'}
          
@@ -50,7 +47,9 @@ import "./ProductCard.css"
             mt={-12}
             backgroundColor={'#EDF0F9'}
             pos={'relative'}
-            height={'230px'}
+            height={'220px'}
+            
+            
           
             _groupHover={{
               _after: {
@@ -72,20 +71,20 @@ import "./ProductCard.css"
               rounded={'xl'}
               height={"100%"}
               width={"100%"}
-              objectFit={'fit'}
+              objectFit={'contain'}
               src={image}
               position={'absolute'}
             />
             {/* style={{position:'absolute',zIndex:'3000',width:'100%',marginTop:'62%',justifyContent:'space-between'}} */}
              {/* <div id='callIcons'  ></div> */}
               <h1 id='whatsappIcon'> <WhatsAppButton/></h1>
-              <h1 id='calIcon'><PhoneCallButton/></h1>
+              <h1   id='calIcon'><PhoneCallButton/></h1>
            
             
           
           </Box>
           </RouterLink>
-          <div style={{background:"#EDF0F9",borderBottomLeftRadius:"8px",borderBottomRightRadius:"8px"}} >
+          <div style={{background:"#EDF0F9",borderBottomLeftRadius:"8px",borderBottomRightRadius:"8px",height:'250px'}} >
           <Stack >
           <div style={{background:"#EDF0F9",width:"90%",margin:"auto"}}>
           <RouterLink to={`/${id}`}>
