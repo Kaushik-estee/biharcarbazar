@@ -56,12 +56,29 @@ useEffect(() => {
 }, [id]);
 console.log("relpro",relproduct.length);
 
+// const fetchdata2 = async (newRelative) => {
+//     try {
+//         const response = await axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?minPrice=${newRelative.gte}&maxPrice=${newRelative.lte}`);
+//         const responseData = response.data;
+//         if (responseData.cars.length > 1) {
+//             setRelproduct(responseData.cars);
+//         } else {
+//             document.getElementById('showRelative').textContent = 'No Product To show';
+//         }
+//     } catch (error) {
+//         console.error(error);
+//     }
+// };
 const fetchdata2 = async (newRelative) => {
     try {
         const response = await axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?minPrice=${newRelative.gte}&maxPrice=${newRelative.lte}`);
         const responseData = response.data;
-        if (responseData.cars.length > 1) {
-            setRelproduct(responseData.cars);
+        
+        // Filter out the sold products
+        const unsoldProducts = responseData.cars.filter(car => car.booked !== 'sold');
+        
+        if (unsoldProducts.length > 1) {
+            setRelproduct(unsoldProducts);
         } else {
             document.getElementById('showRelative').textContent = 'No Product To show';
         }
@@ -69,6 +86,7 @@ const fetchdata2 = async (newRelative) => {
         console.error(error);
     }
 };
+
   
 
 
@@ -123,8 +141,8 @@ const filteredImages = images.filter(image => image);
         <h1 style={{fontWeight:'bold',color:'#F26522'}}>Details</h1>
         <Heading color={'#27005D'} > {make}</Heading>
         {/* <Text    style={{fontWeight:'bold',color:'#27005D'}}>  &#8377; {price}</Text> */}
-        {booked.toLowerCase() === 'no' && <Text style={{ fontWeight: 'bold', color: '#27005D' }}>&#8377; {price}</Text>}
-    
+        {booked !== 'sold' && <Text style={{ fontWeight: 'bold', color: '#27005D' }}>&#8377; {price}</Text>}
+      
         <div style={{display:'flex'}}>
              <img style={{margin:'5px',width:'18px',height:'18px'}} src="https://cdn.bigboytoyz.com/new-version/attributes/calender1-icon.png" alt="" />
             <Text color={'#27005D'} fontWeight={'500'}  >

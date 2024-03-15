@@ -61,31 +61,67 @@ const fetchData = () => {
 // console.log(id);
 // fetchData();
 // }
-const  DescData=async(page)=>{
+// const  DescData=async(page)=>{
                
-  let res = 
-  await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=desc&page=${page}&limit=9`)
-  let data = await res.json()
-  setData(data.cars);
-  setIsLoading(false);
-}
-const  AscData=async(page)=>{
+//   let res = 
+//   await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=desc&page=${page}&limit=27`)
+//   let data = await res.json()
+//   setData(data.cars);
+//   setIsLoading(false);
+// }
+// const  AscData=async(page)=>{
  
-  let res = await fetch
-  (`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=asc&page=${page}&limit=9`)
-  let data = await res.json()
-  setData(data.cars);
-  setIsLoading(false);
-}
-const  All=async(page)=>{
+//   let res = await fetch
+//   (`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=asc&page=${page}&limit=27`)
+//   let data = await res.json()
+//   setData(data.cars);
+//   setIsLoading(false);
+// }
+// const  All=async(page)=>{
  
-  let res = await fetch
-  (`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=9`)
-  let data = await res.json()
-  setData(data.cars);
-  setIsLoading(false);
-}
-
+//   let res = await fetch
+//   (`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=27`)
+//   let data = await res.json()
+//   setData(data.cars);
+//   setIsLoading(false);
+// }
+///////////////////////////////////////////////
+const DescData = async (page) => {
+    let res = await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=desc&page=${page}&limit=27`);
+    let data = await res.json();
+    // Separate sold cars and unsold cars
+    const soldCars = data.cars.filter(car => car.sold === true);
+    const unsoldCars = data.cars.filter(car => car.sold !== true);
+    // Concatenate unsold cars followed by sold cars
+    setData([...unsoldCars, ...soldCars]);
+    setIsLoading(false);
+    setTotal(data.cars.length);
+  };
+  
+  const AscData = async (page) => {
+    let res = await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?sort=asc&page=${page}&limit=27`);
+    let data = await res.json();
+    // Separate sold cars and unsold cars
+    const soldCars = data.cars.filter(car => car.sold === true);
+    const unsoldCars = data.cars.filter(car => car.sold !== true);
+    // Concatenate unsold cars followed by sold cars
+    setData([...unsoldCars, ...soldCars]);
+    setIsLoading(false);
+    setTotal(data.cars.length);
+  };
+  
+  const All = async (page) => {
+    let res = await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=27`);
+    let data = await res.json();
+    // Separate sold cars and unsold cars
+    const soldCars = data.cars.filter(car => car.sold === true);
+    const unsoldCars = data.cars.filter(car => car.sold !== true);
+    // Concatenate unsold cars followed by sold cars
+    setData([...unsoldCars, ...soldCars]);
+    setIsLoading(false);
+    setTotal(data.cars.length);
+  };
+  
 
 
 useEffect(() => {
@@ -112,39 +148,84 @@ All()
     setMake(e.target.value);
   };
 
-const applyFilter=async()=>{
+// const applyFilter=async()=>{
  
-  // if(price.gte>price.lte||year.gte>year.lte||kms.gte>kms.lte||make===""){
-  //   alert("Put Details in correct Order")
-  // }
+//   // if(price.gte>price.lte||year.gte>year.lte||kms.gte>kms.lte||make===""){
+//   //   alert("Put Details in correct Order")
+//   // }
 
-    let res = 
-    await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=9&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`)
-    let data = await res.json()
+//     let res = 
+//     await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=27&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`)
+//     let data = await res.json()
   
     
   
       
-     if(data.length===0){
-      alert('no data found please fill data again')
-    }else{
-      setTotal(data.length)
-      setData(data.cars);
+//      if(data.length===0){
+//       alert('no data found please fill data again')
+//     }else{
+//       setTotal(data.length)
+//       setData(data.cars);
+//       setIsLoading(false);
+//      console.log(year.lte,year.gte,price.lte,price.gte,kms.gte,kms.lte,make);
+//      setIsPopupOpen(!isPopupOpen);
+//      setPrice({gte:0,lte:100000000})
+//      setYear({gte:2000,lte:2023})
+//      setKms({gte:0,lte:300000})
+//     }
+   
+// }
+/////////////////////////////////////////
+const applyFilter = async () => {
+    let res = await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=27&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`);
+    let data = await res.json();
+  
+    if (data.length === 0) {
+      alert('No data found, please fill in the details again');
+    } else {
+      // Separate sold cars and unsold cars
+      const soldCars = data.cars.filter(car => car.sold === true);
+      const unsoldCars = data.cars.filter(car => car.sold !== true);
+      // Concatenate unsold cars followed by sold cars
+      setData([...unsoldCars, ...soldCars]);
+      setTotal(data.cars.length);
+      console.log("total",total);
       setIsLoading(false);
-     console.log(year.lte,year.gte,price.lte,price.gte,kms.gte,kms.lte,make);
-     setIsPopupOpen(!isPopupOpen);
-     setPrice({gte:0,lte:100000000})
-     setYear({gte:2000,lte:2023})
-     setKms({gte:0,lte:300000})
+      console.log(year.lte, year.gte, price.lte, price.gte, kms.gte, kms.lte, make);
+      setIsPopupOpen(!isPopupOpen);
+      setPrice({ gte: 0, lte: 100000000 });
+      setYear({ gte: 2000, lte: 2023 });
+      setKms({ gte: 0, lte: 300000 });
     }
+  };
   
- 
-  
-    
- 
-  
- 
-}
+
+/////////////////////////////////////////
+const renderProducts = () => {
+    // Filter sold and available products
+    const soldProducts = data.filter(product => product.booked === 'sold');
+    const availableProducts = data.filter(product => product.booked !== 'sold');
+
+    // Concatenate available products followed by sold products
+    const sortedProducts = [...availableProducts, ...soldProducts];
+
+    return sortedProducts.map(product => (
+      <GridItem key={product._id}>
+        <ProductCard
+          image={product.image}
+          id={product._id}
+          year={product.year}
+          price={product.price}
+          make={product.make}
+          model={product.model}
+          kms={product.kms}
+          transmission={product.transmission}
+          fuel={product.fuel}
+          booked={product.booked}
+        />
+      </GridItem>
+    ));
+  };
 
     return(
 <div  >
@@ -371,36 +452,9 @@ const applyFilter=async()=>{
             <div style={{width:'90%'}}>
               {isLoading ? (
 <Loading/>
-              ):(<Grid  templateColumns={['repeat(1, 1fr)','repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)','repeat(3, 1fr)']} gap={6}> 
-              {/* mapping product */}
-          {
-              data?.length>0 && data.map((e)=>{
-          return (
-          <GridItem key={e._id} >
-              {/* mapping in card */}
-          <ProductCard
-          
-          image={e.image}
-          id={e._id}
-          year={e.year}
-          price={e.price}
-          
-          make={e.make}
-          
-          model = {e.model}
-          kms = {e.kms}
-          transmission={e.transmission}
-          fuel={e.fuel}
-          exteriorcolor={e.exteriorcolor}
-          booked={e.booked}
-         
-          
-          />
-          </GridItem>
-               ) })
-          }
-          
-          </Grid>)}
+              ):(  <Grid templateColumns={['repeat(1, 1fr)', 'repeat(1, 1fr)', 'repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)']} gap={6}>
+              {isLoading ? <Loading /> : renderProducts()}
+            </Grid>)}
           <div style={{display:'flex',alignItems:'center',justifyContent:"center"}}>
           <Pagination
                current={page}
