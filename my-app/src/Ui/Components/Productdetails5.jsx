@@ -30,7 +30,7 @@ console.log("id",id);
 useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`);
+            const response = await axios.get(`https://kanbanbackend-001h.onrender.com/cars/${id}`);
             const data = response.data;
             console.log("dataaaa",data)
             if (data) {
@@ -71,7 +71,7 @@ console.log("relpro",relproduct.length);
 // };
 const fetchdata2 = async (newRelative) => {
     try {
-        const response = await axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?minPrice=${newRelative.gte}&maxPrice=${newRelative.lte}`);
+        const response = await axios.get(`https://kanbanbackend-001h.onrender.com/cars?minPrice=${newRelative.gte}&maxPrice=${newRelative.lte}`);
         const responseData = response.data;
         
         // Filter out the sold products
