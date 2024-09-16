@@ -30,7 +30,7 @@ console.log("id",id);
 useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars/${id}`);
+            const response = await axios.get(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars/${id}`);
             const data = response.data;
             console.log("dataaaa",data)
             if (data) {
@@ -58,7 +58,7 @@ console.log("relpro",relproduct.length);
 
 const fetchdata2 = async (newRelative) => {
     try {
-        const response = await axios.get(`https://vast-pear-nightingale-sari.cyclic.app/cars?minPrice=${newRelative.gte}&maxPrice=${newRelative.lte}`);
+        const response = await axios.get(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?minPrice=${newRelative.gte}&maxPrice=${newRelative.lte}`);
         const responseData = response.data;
         if (responseData.cars.length > 1) {
             setRelproduct(responseData.cars);

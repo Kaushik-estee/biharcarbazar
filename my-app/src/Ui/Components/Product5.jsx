@@ -61,7 +61,7 @@ const [make,setMake] = useState('')
 
   const productsPerPage = 27;
   const fetchData = () => {
-    axios.get(`https://kanbanbackend-001h.onrender.com/cars`)
+    axios.get(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars`)
       .then(response => {
         setData(response.data.cars);
         setTotal(response.data.cars.length);
@@ -84,7 +84,7 @@ const [make,setMake] = useState('')
 
 ///////////////////////////////////////////////
 const DescData = async (page) => {
-    let res = await fetch(`https://kanbanbackend-001h.onrender.com/cars?sort=desc&page=${page}&limit=27`);
+    let res = await fetch(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?sort=desc&page=${page}&limit=27`);
     let data = await res.json();
     // Separate sold cars and unsold cars
     const soldCars = data.cars.filter(car => car.sold === true);
@@ -96,7 +96,7 @@ const DescData = async (page) => {
   };
   
   const AscData = async (page) => {
-    let res = await fetch(`https://kanbanbackend-001h.onrender.com/cars?sort=asc&page=${page}&limit=27`);
+    let res = await fetch(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?sort=asc&page=${page}&limit=27`);
     let data = await res.json();
     // Separate sold cars and unsold cars
     const soldCars = data.cars.filter(car => car.sold === true);
@@ -108,7 +108,7 @@ const DescData = async (page) => {
   };
   
   const All = async (page) => {
-    let res = await fetch(`https://kanbanbackend-001h.onrender.com/cars?page=${page}&limit=27`);
+    let res = await fetch(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?page=${page}&limit=27`);
     let data = await res.json();
     // Separate sold cars and unsold cars
     const soldCars = data.cars.filter(car => car.sold === true);
@@ -161,7 +161,7 @@ const applyFilter = async () => {
     console.log("Applying filter...");
 
     try {
-      const res = await fetch(`https://kanbanbackend-001h.onrender.com/cars?page=${currentPage}&limit=${productsPerPage}&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`);
+      const res = await fetch(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?page=${currentPage}&limit=${productsPerPage}&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`);
       const data = await res.json();
 
       if (data.length === 0) {

@@ -154,7 +154,7 @@ All()
 
 /////////////////////////////////////////
 const applyFilter = async () => {
-    let res = await fetch(`https://vast-pear-nightingale-sari.cyclic.app/cars?page=${page}&limit=27&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`);
+    let res = await fetch(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?page=${page}&limit=27&price_gte=${price.gte}&price_lte=${price.lte}&kms_gte=${kms.gte}&kms_lte=${kms.lte}&year_gte=${year.gte}&year_lte=${year.lte}&make=${make}`);
     let data = await res.json();
   
     if (data.length === 0) {
