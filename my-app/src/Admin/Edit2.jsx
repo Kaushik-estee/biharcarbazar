@@ -14,7 +14,7 @@ const Edit2 = () => {
     console.log(id)
 useEffect(()=>{
     axios
-    .get(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars/${id}`)
+    .get(`https://kanbanbackend-001h.onrender.com/cars/${id}`)
     .then(({data})=>{
         setProduct(data)
         console.log(product);
@@ -27,7 +27,7 @@ useEffect(()=>{
      
         event.preventDefault();
         axios
-        .put(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars/${id}`,product)
+        .put(`https://kanbanbackend-001h.onrender.com/cars/${id}`,product)
         .then(({data})=>{
           toast.success('EDITED successfully');
             navigate('/admin')

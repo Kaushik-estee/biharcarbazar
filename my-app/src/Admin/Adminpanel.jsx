@@ -15,7 +15,7 @@ const{_id}=useParams()
 console.log("params",_id);
 
 const fetchData = () => {
-    axios.get('https://wonderful-lamarr.152-53-1-117.plesk.page/cars')
+    axios.get('https://kanbanbackend-001h.onrender.com/cars')
       .then(response => {
         setData(response.data.cars);
         console.log(response.data.cars);
@@ -33,7 +33,7 @@ const fetchData = () => {
 
 
 const onDelete=(_id)=>{
-    axios.delete(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars/${_id}`)
+    axios.delete(`https://kanbanbackend-001h.onrender.com/cars/${_id}`)
     .then(response => {
       // Handle successful response
       
@@ -54,21 +54,21 @@ const onDelete=(_id)=>{
 const  DescData=async(page)=>{
                
   let res = 
-  await fetch(`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?\_sort=price&_order=desc`)
+  await fetch(`https://kanbanbackend-001h.onrender.com/cars?\_sort=price&_order=desc`)
   let data = await res.json()
   setData(data);
 }
 const  AscData=async(page)=>{
  
   let res = await fetch
-  (`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?_sort=price&_order=asc`)
+  (`https://kanbanbackend-001h.onrender.com/cars?_sort=price&_order=asc`)
   let data = await res.json()
   setData(data);
 }
 const  All=async(page)=>{
  
   let res = await fetch
-  (`https://wonderful-lamarr.152-53-1-117.plesk.page/cars?`)
+  (`https://kanbanbackend-001h.onrender.com/cars?`)
   let data = await res.json()
   setData(data);
 }

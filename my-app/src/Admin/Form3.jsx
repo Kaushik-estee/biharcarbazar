@@ -56,7 +56,7 @@ function ImageUploadForm() {
   // Function to send data to your API
   const sendToYourApi = async (data) => {
     try {
-      const response = await axios.post('https://wonderful-lamarr.152-53-1-117.plesk.page/cars', data);
+      const response = await axios.post('https://kanbanbackend-001h.onrender.com/cars', data);
       console.log('API Response:', response.data);
       toast.success('Added successfully');
     } catch (error) {
